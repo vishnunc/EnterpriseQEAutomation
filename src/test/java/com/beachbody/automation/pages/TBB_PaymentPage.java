@@ -50,14 +50,14 @@ public class TBB_PaymentPage {
 			WebElement CCMonth=world.driver.findElement(By.xpath(elementLib.getString("select_ccMonth")));
 			Select ccMonth = new Select(CCMonth);
 			ccMonth.selectByValue("08");
-			Assert.assertTrue(CCMonth.isSelected(), "CC month is selected");		
+				
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_ccYear")), 30);
 		
 			WebElement CCYear=world.driver.findElement(By.xpath(elementLib.getString("select_ccYear")));
 			Select ccYear = new Select(CCYear);
 			ccYear.selectByValue("2024");
-			Assert.assertTrue(CCYear.isSelected(), "CC Year is selected");
+			
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_ccCVV")), 30);
 		

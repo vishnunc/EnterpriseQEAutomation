@@ -48,6 +48,6 @@ Scenario Outline: New customer registration with purchase - [Lead, Performance p
 
 Examples: Test data for the E2E scenario
 |pack|packtype|flavor|packaging|recover|RPacking|qty|subtotal|estimatedtotal|email|fname|lname|phone|address|city|state|zip|shipping|password|dob|gender|coach|
-|21DayFixEXTREME|cdp-grid:21dayfixextreme:21dperformancepackaa:performancepack:3:buynow|Lemon|32|Orange|20|1|$160.00|$160.00|testing_vn@yopmail.com|testing|vvv|4695552221|3301 Exposition Blvd|Santa Monica|CA|90404|1|Testing1234|03-17-1986|Male|No|
+|21DayFixEXTREME|21EPerformancePack:performancePack:4|Lemon|40|Orange|20|1|$160.00|$160.00|testing_ln@yopmail.com|testing|ln|4695552221|3301 Exposition Blvd|Santa Monica|CA|90404|1|Testing1234|03-17-1986|Male|Yes|
 	
 

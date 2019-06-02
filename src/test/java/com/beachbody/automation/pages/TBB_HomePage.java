@@ -58,16 +58,16 @@ public class TBB_HomePage {
 	/*
 	 * closing the popup
 	 */
-	public boolean ClosingHomePagePopUp() {            
+	public boolean ClosingHomePagePopUp() throws RuntimeException {            
         try{
         	driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("popup_HomePage")), 30);
-        	WebElement popup=world.driver.findElement(By.xpath("popup_HomePage"));
+        	WebElement popup=world.driver.findElement(By.xpath(elementLib.getString("popup_HomePage")));
             if(popup.isEnabled())
             {
             	popup.click();
             }
 		}  catch(Exception el) {
-    			el.printStackTrace();
+    			throw new RuntimeException("The pop up is not clickable");
 		}			            
         return true;
     }
@@ -91,35 +91,18 @@ public class TBB_HomePage {
 	
 
 	/*
-	 * Verifying ProductDescriptionPage 
-	 */
-	public boolean VerifyProductDescriptionPage()
-	{
-		try {
-			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("title_PDP")), 10);
-			WebElement a=world.driver.findElement(By.xpath(elementLib.getString("text_HomePageTitle")));
-			Assert.assertTrue(a.isDisplayed(), "PDP page displayed succesffully");			
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}		
-		return true;		
-	}
-	
-
-	/*
 	 * Selecting challenge pack
 	 */
 	public boolean selectChallengePack(String packName){
 		String pack = elementLib.getString("placeholder_button_Pack").replaceAll("PLACEHOLDER", packName);
-		try {			
-			driverUtils.waitforElementPresent(world.driver, By.xpath(pack), 40);
+		try {	
+			Thread.sleep(5000);
+			driverUtils.waitforElementPresent(world.driver, By.xpath(pack), 120);
 			WebElement e=world.driver.findElement(By.xpath(pack));
-			Assert.assertTrue(e.isEnabled(), "challenge pack button enabled");
 			e.click();
+			Thread.sleep(5000);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting challenge pack");
 		}				
 		return true;
 	}
@@ -135,8 +118,7 @@ public class TBB_HomePage {
 			Assert.assertTrue(e.isEnabled(), "challenge packType button Enabled");
 			e.click();
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting challenge pack type");
 		}		
 		return true;
 	}
@@ -150,8 +132,7 @@ public class TBB_HomePage {
 			Select selectFlav = new Select(world.driver.findElement(By.xpath(elementLib.getString("select_Flavor"))));
 			selectFlav.selectByValue(flavor);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting flavor");
 		}		
 		return true;
 	}
@@ -165,8 +146,7 @@ public class TBB_HomePage {
 			Select selectPack = new Select(world.driver.findElement(By.xpath(elementLib.getString("select_Packaging"))));
 			selectPack.selectByValue(packaging);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting packaging");
 		}		
 		return true;
 	}
@@ -180,8 +160,7 @@ public class TBB_HomePage {
 			Select selectRecover = new Select(world.driver.findElement(By.xpath(elementLib.getString("select_Recover"))));
 			selectRecover.selectByValue(recover);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting recover");
 		}		
 		return true;
 	}
@@ -198,8 +177,7 @@ public class TBB_HomePage {
 					world.driver.findElement(By.xpath(elementLib.getString("select_RecoverPackaging"))));
 			selectPack.selectByValue(recoverpackaging);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting recover packaging");
 		}		
 		return true;
 	}
@@ -213,8 +191,7 @@ public class TBB_HomePage {
 			Select selectQty = new Select(world.driver.findElement(By.xpath(elementLib.getString("select_Quantity"))));
 			selectQty.selectByValue(qty);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue selecting quantity");
 		}		
 		return true;
 	}
@@ -226,9 +203,9 @@ public class TBB_HomePage {
 		try {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_AddToCart")), 5);
 			world.driver.findElement(By.xpath(elementLib.getString("button_AddToCart"))).click();
+			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_AddToCart")), 5);
 		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			throw new RuntimeException("Issue clicking on add to cart");
 		}		
 		return true;
 	}

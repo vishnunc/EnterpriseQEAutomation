@@ -27,10 +27,10 @@ public class TBB_AccountPage {
 	public void createAccount(String rEmail, String password, String rpassword, String dob, String gender) {
 		try {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_reenterEmail")), 30);
-			String mail=world.driver.findElement(By.xpath(elementLib.getString("input_email"))).getAttribute("value");
+			String email = world.driver.findElement(By.xpath(elementLib.getString("input_AccEmail"))).getAttribute("value");
 			WebElement ReEnterMail=world.driver.findElement(By.xpath(elementLib.getString("input_reenterEmail")));
 			Assert.assertTrue(ReEnterMail.isEnabled(), "Email reenter filed enabled");
-			ReEnterMail.sendKeys(mail);					
+			ReEnterMail.sendKeys(email);					
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_password")), 30);
 			WebElement Passwd=world.driver.findElement(By.xpath(elementLib.getString("input_password")));
@@ -49,19 +49,19 @@ public class TBB_AccountPage {
 			WebElement BirthMonth=world.driver.findElement(By.xpath(elementLib.getString("select_birthMonth")));
 			Select month= new Select(BirthMonth);
 			month.selectByValue(dob.split("-")[0]);
-			Assert.assertTrue(BirthMonth.isSelected(), "birth month is selected");
+			
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_birthDay")), 30);
 			WebElement BirthDay=world.driver.findElement(By.xpath(elementLib.getString("select_birthDay")));
 			Select day= new Select(BirthDay);
 			day.selectByValue(dob.split("-")[1]);
-			Assert.assertTrue(BirthDay.isSelected(), "Birth day is selected");			
+				
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_birthYear")), 30);
 			WebElement BirthYear=world.driver.findElement(By.xpath(elementLib.getString("select_birthYear")));
 			Select year= new Select(BirthYear);
 			year.selectByValue(dob.split("-")[2]);
-			Assert.assertTrue(BirthYear.isSelected(), "Birt Year selected");
+			
 				
 		//Select the appropriate gender				
 			if(gender.equalsIgnoreCase("male")){
@@ -72,7 +72,6 @@ public class TBB_AccountPage {
 			}		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("radio_genderMale")), 30);
 			WebElement Gender=world.driver.findElement(By.xpath(elementLib.getString("radio_genderMale")));
-			Assert.assertTrue(Gender.isSelected(), "gender is selected");
 		} catch (Exception e1) {
 			throw new RuntimeException("Account not created"+e1);
 		}
@@ -86,6 +85,20 @@ public class TBB_AccountPage {
 		if(option.equalsIgnoreCase("no")){
 			WebElement Coach=world.driver.findElement(By.xpath(elementLib.getString("button_coachNo")));
 			Assert.assertTrue(Coach.isEnabled(), "No coach option is enabled" );
+			Coach.click();
+		}
+		else
+		{
+			WebElement Coach=world.driver.findElement(By.xpath(elementLib.getString("button_coachYes")));
+			Assert.assertTrue(Coach.isEnabled(), "No coach option is enabled" );
+			Coach.click();
+			//Select the type of search for coach to email
+			Select coachType = new Select(world.driver.findElement(By.xpath(elementLib.getString("select_coachType"))));
+			coachType.selectByValue("email");
+			//Enter the coach email id
+			world.driver.findElement(By.xpath(elementLib.getString("input_coachSearch"))).sendKeys("wave11uscoach19@yopmail.com");
+			//Click on yes again to trigger event
+			Coach.click();
 		}
 	}
 	

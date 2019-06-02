@@ -45,6 +45,7 @@ public class TBB_ProductDetailspage {
 		try {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_Flavor")), 15);		
 			WebElement e=world.driver.findElement(By.xpath(elementLib.getString("select_Flavor")));
+			e.click();
 			Select selectFlav = new Select(e);
 			selectFlav.selectByValue(flavor);
 		} catch (Exception e1) {
@@ -76,6 +77,7 @@ public class TBB_ProductDetailspage {
 		try {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_Packaging")), 15);		
 			WebElement e=world.driver.findElement(By.xpath(elementLib.getString("select_Packaging")));
+			e.click();
 			Select selectPack = new Select(e);
 			selectPack.selectByValue(packaging);
 		} catch (Exception e1) {
@@ -92,6 +94,7 @@ public class TBB_ProductDetailspage {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_Recover")), 15);
 		
 			WebElement e=world.driver.findElement(By.xpath(elementLib.getString("select_Recover")));
+			e.click();
 			Select selectRecover = new Select(e);
 			selectRecover.selectByValue(recover);
 			} catch (Exception e1) {
@@ -107,6 +110,7 @@ public class TBB_ProductDetailspage {
 		try {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_Quantity")), 15);		
 			WebElement e=world.driver.findElement(By.xpath(elementLib.getString("select_Quantity")));
+			e.click();
 			Select selectQty = new Select(e);
 			selectQty.selectByValue(qty);
 			} catch (Exception e1) {
@@ -120,6 +124,7 @@ public class TBB_ProductDetailspage {
 	 */
 	public boolean clickAddToCart(){
 		try {
+			
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_AddToCart")), 30);		
 			WebElement e=world.driver.findElement(By.xpath(elementLib.getString("button_AddToCart")));
 			e.click();

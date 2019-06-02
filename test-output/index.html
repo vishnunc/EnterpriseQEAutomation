@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-skipped">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Suite">
-                    <span>C:\Users\bharath\Desktop\010619New\EnterpriseQEAutomation0106\testng.xml</span>
+                    <span>testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content skipped suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.beachbody.automation.runners.DefaultRunner" hash-for-method="runScenario(&quot;Verifying the customer details in ByDesign&quot;, &quot;ByDesign Customer Details Verification&quot;)">runScenario("Verifying the customer details in ByDesign", "ByDesign Customer Details Verification")</a> <!-- method navigator-link -->
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.beachbody.automation.runners.DefaultRunner" hash-for-method="runScenario(&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;, &quot;New customer registrati...)">runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content skipped suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,43 +117,41 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="skipped.png"/>
               <span class="class-name">com.beachbody.automation.runners.DefaultRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Verifying the customer details in ByDesign&quot;, &quot;ByDesign Customer Details Verification&quot;)">
-                  </a> <!-- runScenario("Verifying the customer details in ByDesign", "ByDesign Customer Details Verification") -->
+                  <a name="runScenario(&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;, &quot;New customer registrati...)">
+                  </a> <!-- runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Verifying the customer details in ByDesign", "ByDesign Customer Details Verification")</span>
-                  <div class="stack-trace">java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.ie.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver. The latest version can be downloaded from http://selenium-release.storage.googleapis.com/index.html
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:134)
-	at org.openqa.selenium.ie.InternetExplorerDriverService.access$000(InternetExplorerDriverService.java:35)
-	at org.openqa.selenium.ie.InternetExplorerDriverService$Builder.findDefaultExecutable(InternetExplorerDriverService.java:175)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:355)
-	at org.openqa.selenium.ie.InternetExplorerDriver.setupService(InternetExplorerDriver.java:281)
-	at org.openqa.selenium.ie.InternetExplorerDriver.&lt;init&gt;(InternetExplorerDriver.java:211)
-	at org.openqa.selenium.ie.InternetExplorerDriver.&lt;init&gt;(InternetExplorerDriver.java:150)
-	at com.beachbody.automation.drivers.WebDriverManager.getIEDriver(WebDriverManager.java:22)
-	at com.beachbody.automation.common.World.getIEDriver(World.java:38)
-	at com.beachbody.automation.stepdefs.BYDStepDefs.i_am_on_ByDesign_Home_Page(BYDStepDefs.java:25)
-	at ✽.I am on ByDesign Home Page(file:src/test/resources/features/e2e/BYDCustomerDetails.feature:5)
-
+                  <span class="parameters">("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registration with purchase - [Lead, Performance pack, Club]")</span>
+                  <div class="stack-trace">org.testng.SkipException: There are undefined steps
+	at cucumber.api.testng.TestCaseResultListener.getError(TestCaseResultListener.java:60)
+	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:69)
+	at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
+	at com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests.runScenario(AbstractTestNGCucumberParallelTests.java:58)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+... Removed 9 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-skipped -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\bharath\Desktop\010619New\EnterpriseQEAutomation0106\testng.xml</span>
+            <span class="header-content">/Users/vishnu/EnterpriseQEAutomation/testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -217,12 +215,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.beachbody.automation.runners.DefaultRunner')
-data.setCell(0, 3, 13441);
+data.setCell(0, 3, 239310);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 13 seconds</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -255,21 +253,19 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">181 ms</span>
+                <span class="method-start">205 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">runScenario("Verifying the customer details in ByDesign", "ByDesign Customer Details Verification")</span>
-                <span class="method-start">263 ms</span>
+                <span class="method-name">runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...)</span>
+                <span class="method-start">379 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">13736 ms</span>
+                <span class="method-start">239691 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">13737 ms</span>
+                <span class="method-start">239692 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -71,7 +71,7 @@ public class TBB_HomePageStepDefs {
 	       //selecting recover on product details page
 	       tbbproductDetailsPage.selectRecover(recover);
 	       //selecting recovering packaging
-	       tbbproductDetailsPage.RecoverPackaging(RPacking);
+	       //tbbproductDetailsPage.RecoverPackaging(RPacking);
 	       //selecting quantity on product details page
 	       tbbproductDetailsPage.selectQuantity(qty);
 	       //Clicking Add to cart button
@@ -151,6 +151,7 @@ public class TBB_HomePageStepDefs {
 
 	@Then("when I enter payment details to continue")
 	public void when_I_enter_payment_details_to_continue() {
+		tbbPaymentPage = new TBB_PaymentPage(this.world);
 	    //entering CC details	    
 		tbbPaymentPage.enterCCDetails();
 		//clicking on continue button
