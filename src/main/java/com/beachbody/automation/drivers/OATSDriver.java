@@ -1,5 +1,7 @@
 package com.beachbody.automation.drivers;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -21,8 +23,11 @@ public class OATSDriver {
 		this.world=world;
 	}
 	
-	public boolean runScript(String scriptName,String properties){
-		
+	public boolean runScript(String scriptName,String properties) throws IOException{
+		ProcessBuilder oatsProcess = new ProcessBuilder("C:/OracleOATS/openScript/runScript.bat",scriptName);
+		oatsProcess.directory(new File("OATS/Scripts"));
+		oatsProcess.start();
+		//Read the output and error stream here and return accordingly
 		return true;
 	}
 
