@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="14899" started-at="2019-06-02T10:06:25Z" finished-at="2019-06-02T10:06:40Z">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@57536d79]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test name="Test" duration-ms="14899" started-at="2019-06-02T10:06:25Z" finished-at="2019-06-02T10:06:40Z">
+      <class name="com.beachbody.automation.runners.DefaultRunner">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@57536d79]" name="setUpClass" is-config="true" duration-ms="181" started-at="2019-06-02T10:06:25Z" finished-at="2019-06-02T10:06:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@57536d79]" name="before" is-config="true" duration-ms="0" started-at="2019-06-02T10:06:25Z" finished-at="2019-06-02T10:06:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@57536d79]" name="runScenario" duration-ms="13441" started-at="2019-06-02T10:06:25Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-02T10:06:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verifying the customer details in ByDesign"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["ByDesign Customer Details Verification"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalStateException">
+            <message>
+              <![CDATA[The path to the driver executable must be set by the webdriver.ie.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver. The latest version can be downloaded from http://selenium-release.storage.googleapis.com/index.html]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalStateException: The path to the driver executable must be set by the webdriver.ie.driver system property; for more information, see https://github.com/SeleniumHQ/selenium/wiki/InternetExplorerDriver. The latest version can be downloaded from http://selenium-release.storage.googleapis.com/index.html
+at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
+at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:134)
+at org.openqa.selenium.ie.InternetExplorerDriverService.access$000(InternetExplorerDriverService.java:35)
+at org.openqa.selenium.ie.InternetExplorerDriverService$Builder.findDefaultExecutable(InternetExplorerDriverService.java:175)
+at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:355)
+at org.openqa.selenium.ie.InternetExplorerDriver.setupService(InternetExplorerDriver.java:281)
+at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:211)
+at org.openqa.selenium.ie.InternetExplorerDriver.<init>(InternetExplorerDriver.java:150)
+at com.beachbody.automation.drivers.WebDriverManager.getIEDriver(WebDriverManager.java:22)
+at com.beachbody.automation.common.World.getIEDriver(World.java:38)
+at com.beachbody.automation.stepdefs.BYDStepDefs.i_am_on_ByDesign_Home_Page(BYDStepDefs.java:25)
+at ✽.I am on ByDesign Home Page(file:src/test/resources/features/e2e/BYDCustomerDetails.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalStateException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@57536d79]" name="after" is-config="true" duration-ms="1" started-at="2019-06-02T10:06:38Z" finished-at="2019-06-02T10:06:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@57536d79]" name="tearDownClass" is-config="true" duration-ms="1151" started-at="2019-06-02T10:06:38Z" finished-at="2019-06-02T10:06:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- com.beachbody.automation.runners.DefaultRunner -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><assets>
+<asset alias="HomePage" local="true" primary="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/HomePage.properties" type="relative"/>
+</asset>
+<asset alias="LoginPage" local="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/LoginPage.properties" type="relative"/>
+</asset>
+</assets>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><assets>
+<asset alias="Browser_Functions" local="true" sourceType="file" type="SCRIPT">
+<location path="../../Functions/Browser_Functions" type="relative"/>
+</asset>
+<asset alias="Forms_Functions" local="true" sourceType="file" type="SCRIPT">
+<location path="../../Functions/Forms_Functions" type="relative"/>
+</asset>
+</assets>

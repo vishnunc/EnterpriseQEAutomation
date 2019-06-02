@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Library-Class: lib.beachbody.formslibs.Forms_Functions
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><assets>
+<asset alias="CustomerDetails" local="true" primary="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/CustomerDetails.properties" type="relative"/>
+</asset>
+<asset alias="FindCustomerPage" local="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/FindCustomerPage.properties" type="relative"/>
+</asset>
+<asset alias="FindOrderPage" local="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/FindOrderPage.properties" type="relative"/>
+</asset>
+<asset alias="OrderDetailsPage" local="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/OrderDetailsPage.properties" type="relative"/>
+</asset>
+<asset alias="TransactionHistory" local="true" sourceType="file" type="OBJECTLIB">
+<location path="../../ObjectLibrary/TransactionHistory.properties" type="relative"/>
+</asset>
+</assets>
