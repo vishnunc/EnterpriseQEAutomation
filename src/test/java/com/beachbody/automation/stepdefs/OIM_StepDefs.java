@@ -1,5 +1,12 @@
 package com.beachbody.automation.stepdefs;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import org.testng.Assert;
 
 import com.beachbody.automation.common.World;
@@ -24,36 +31,24 @@ public class OIM_StepDefs {
 	@Given("I am on OIM home page")
 	public void i_am_on_OIM_home_page() {		
 		//launching OIM on browser
+				
+	}
+
+	@Given("I am logged in to OIM")
+	public void i_am_logged_in_to_OIM() throws MalformedURLException {
+		File file = new File("config");
+		URL[] urls = {file.toURI().toURL()};
+		ClassLoader loader = new URLClassLoader(urls);
+		ResourceBundle configLib=ResourceBundle.getBundle("config",Locale.getDefault(),loader);
 		world.driver.get(ConfigFileReader.getConfigFileReader().getOIMUrl());		
-		oim=new OIM_Page(this.world);		
+		oim=new OIM_Page(this.world);
+		oim.login(configLib.getString("OIM_Username"),configLib.getString("OIM_Password"));
 	}
 
-	
-	@When("I login with userName {string} and password {string}")
-	public void i_login_with_userName_and_password(String userName, String password) {	
-	   //entering username
-	   oim.enterUserName(userName);
-	   //entering password
-	   oim.enterPassword(password);
-	   //clicking on sign in button
-	   oim.clickOnSignInButton();
-	}
-
-
-	@When("I click on manage")
-	public void i_click_on_manage() {
-		//clicking on manage button
-		oim.clickManage();	   
-	}
-
-	@When("I click on users under administration")
-	public void i_click_on_users_under_administration() {
-		//clicking on users
-		oim.clickUsers();	   
-	}
-			
-	@When("I enter email {string} and click on search")
-	public void i_enter_email_and_click_on_search(String email) {	
+	@When("I search for user with {string} in OIM")
+	public void i_search_for_user_with_in_OIM(String email) {
+		oim.clickManage();
+		oim.clickUsers();
 		//selecting 
 		oim.selectSearchDropDown("4");
 		//entering email
@@ -62,6 +57,12 @@ public class OIM_StepDefs {
 		oim.clickOnSearchIcon();
 	}
 
+	@Then("I should be able to validate the customer details in OIM")
+	public void i_should_be_able_to_validate_the_customer_details_in_OIM() {
+	   
+	}
+	
+	
 	@Then("I verify {string} and {string} should be displayed")
 	public void i_verify_and_should_be_displayed(String FirstName, String LastName) {
 		//validating first name and last name

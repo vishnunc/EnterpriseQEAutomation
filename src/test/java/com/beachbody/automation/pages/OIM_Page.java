@@ -306,5 +306,18 @@ public class OIM_Page {
 		return ele;
     }
 
+	public boolean login(String username, String password) {
+		try {
+			driverUtils.verifyElementPresence(driverUtils, world.driver,elementLib.getString("textbox_username") , 20);
+			world.driver.findElement(By.xpath(elementLib.getString("textbox_username"))).sendKeys(username);	
+			world.driver.findElement(By.xpath(elementLib.getString("textbox_password"))).sendKeys(password);
+			world.driver.findElement(By.xpath(elementLib.getString("button_signin"))).click();
+		}catch (Exception e1) {
+			throw new RuntimeException("Login not successful "+e1);
+		}
+			return true;				
+		
+	}
+
 
 }

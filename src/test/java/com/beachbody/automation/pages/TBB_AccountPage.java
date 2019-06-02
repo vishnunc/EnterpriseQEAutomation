@@ -26,7 +26,7 @@ public class TBB_AccountPage {
 	 */
 	public void createAccount(String rEmail, String password, String rpassword, String dob, String gender) {
 		try {
-			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_reenterEmail")), 30);
+			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_reenterEmail")), 120);
 			String email = world.driver.findElement(By.xpath(elementLib.getString("input_AccEmail"))).getAttribute("value");
 			WebElement ReEnterMail=world.driver.findElement(By.xpath(elementLib.getString("input_reenterEmail")));
 			Assert.assertTrue(ReEnterMail.isEnabled(), "Email reenter filed enabled");
@@ -61,6 +61,8 @@ public class TBB_AccountPage {
 			WebElement BirthYear=world.driver.findElement(By.xpath(elementLib.getString("select_birthYear")));
 			Select year= new Select(BirthYear);
 			year.selectByValue(dob.split("-")[2]);
+			//Save all the values
+			world.setCustomerDetails("Email", email);
 			
 				
 		//Select the appropriate gender				
@@ -72,6 +74,12 @@ public class TBB_AccountPage {
 			}		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("radio_genderMale")), 30);
 			WebElement Gender=world.driver.findElement(By.xpath(elementLib.getString("radio_genderMale")));
+			
+			//Read all the order details
+			world.setOrderDetails("SubTotal", world.driver.findElement(By.xpath(elementLib.getString("text_SubTotal"))).getText().trim());
+			world.setOrderDetails("Total", world.driver.findElement(By.xpath(elementLib.getString("text_Total"))).getText().trim());
+			world.setOrderDetails("Tax", world.driver.findElement(By.xpath(elementLib.getString("text_Tax"))).getText().trim());
+			world.setOrderDetails("SnH", world.driver.findElement(By.xpath(elementLib.getString("text_SnH"))).getText().trim());
 		} catch (Exception e1) {
 			throw new RuntimeException("Account not created"+e1);
 		}

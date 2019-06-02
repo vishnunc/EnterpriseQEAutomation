@@ -29,7 +29,7 @@ public class TBB_PaymentPage {
 	public boolean enterCCDetails() {		
 		System.out.println("enter CCDetails");
 		try {
-			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_ccfName")), 30);
+			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_ccfName")), 120);
 			WebElement CCFname=world.driver.findElement(By.xpath(elementLib.getString("input_ccfName")));
 			Assert.assertTrue(CCFname.isEnabled(), "CCFname field is enabled");
 			CCFname.sendKeys("testing");

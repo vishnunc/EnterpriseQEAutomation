@@ -7,6 +7,9 @@ import com.beachbody.automation.drivers.SauceLabsDriver;
 import com.beachbody.automation.drivers.SeleniumGridDriver;
 import com.beachbody.automation.drivers.WebDriverManager;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 
 
@@ -23,7 +26,34 @@ public class World {
 	OATSDriver oatsDriver = new OATSDriver(this);
 	public WebDriver driver;
 	public WebDriver ieDriver;
-	
+	Map<String,String> customerDetails=new HashMap<String,String>();
+	Map<String,String> orderDetails=new HashMap<String,String>();
+
+	public Map<String, String> getCustomerDetails() {
+		return customerDetails;
+	}
+
+	public void setCustomerDetails(String key,String value) {
+		
+		this.customerDetails.put(key, value);
+	}
+
+	public Map<String, String> getOrderDetails() {
+		return orderDetails;
+	}
+
+	public OATSDriver getOatsDriver() {
+		return oatsDriver;
+	}
+
+	public void setOatsDriver(OATSDriver oatsDriver) {
+		this.oatsDriver = oatsDriver;
+	}
+
+	public void setOrderDetails(String key,String value) {
+		
+		this.orderDetails.put(key, value);
+	}
 
 	public WebDriver getDriver(){
 		switch(this.driverType){

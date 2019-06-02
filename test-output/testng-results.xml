@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="239939" started-at="2019-06-02T21:20:24Z" finished-at="2019-06-02T21:24:24Z">
+  <suite name="Suite" duration-ms="8077" started-at="2019-06-02T22:46:45Z" finished-at="2019-06-02T22:46:53Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="239939" started-at="2019-06-02T21:20:24Z" finished-at="2019-06-02T21:24:24Z">
+    <test name="Test" duration-ms="8077" started-at="2019-06-02T22:46:45Z" finished-at="2019-06-02T22:46:53Z">
       <class name="com.beachbody.automation.runners.DefaultRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="setUpClass" is-config="true" duration-ms="205" started-at="2019-06-02T21:20:24Z" finished-at="2019-06-02T21:20:24Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="setUpClass" is-config="true" duration-ms="220" started-at="2019-06-02T22:46:45Z" finished-at="2019-06-02T22:46:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="before" is-config="true" duration-ms="1" started-at="2019-06-02T21:20:24Z" finished-at="2019-06-02T21:20:24Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="before" is-config="true" duration-ms="1" started-at="2019-06-02T22:46:45Z" finished-at="2019-06-02T22:46:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="SKIP" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" duration-ms="239310" started-at="2019-06-02T21:20:25Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-02T21:24:24Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" duration-ms="7593" started-at="2019-06-02T22:46:45Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-02T22:46:53Z">
           <params>
             <param index="0">
               <value>
@@ -31,14 +31,39 @@
               </value>
             </param>
           </params>
-          <exception class="org.testng.SkipException">
+          <exception class="java.util.MissingResourceException">
             <message>
-              <![CDATA[There are undefined steps]]>
+              <![CDATA[Can't find bundle for base name config/config, locale en_US]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.testng.SkipException: There are undefined steps
-at cucumber.api.testng.TestCaseResultListener.getError(TestCaseResultListener.java:60)
-at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:69)
+              <![CDATA[java.util.MissingResourceException: Can't find bundle for base name config/config, locale en_US
+at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1564)
+at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1387)
+at java.util.ResourceBundle.getBundle(ResourceBundle.java:773)
+at com.beachbody.automation.stepdefs.OIM_StepDefs.<init>(OIM_StepDefs.java:24)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+at org.picocontainer.injectors.AbstractInjector.newInstance(AbstractInjector.java:145)
+at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:342)
+at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
+at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
+at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
+at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
+at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
+at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
+at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
+at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
+at cucumber.runtime.java.picocontainer.PicoFactory.getInstance(PicoFactory.java:40)
+at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
+at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
+at cucumber.runner.TestStep.executeStep(TestStep.java:63)
+at cucumber.runner.TestStep.run(TestStep.java:49)
+at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
+at cucumber.runner.TestCase.run(TestCase.java:45)
+at cucumber.runner.Runner.runPickle(Runner.java:40)
+at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:65)
 at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
 at com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests.runScenario(AbstractTestNGCucumberParallelTests.java:58)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -56,20 +81,21 @@ at java.util.concurrent.FutureTask.run(FutureTask.java:266)
 at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 at java.lang.Thread.run(Thread.java:745)
+at ✽.I am logged in to OIM(file:src/test/resources/features/e2e/TCID_C6209824.feature:28)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.testng.SkipException -->
+          </exception> <!-- java.util.MissingResourceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="after" is-config="true" duration-ms="1" started-at="2019-06-02T21:24:24Z" finished-at="2019-06-02T21:24:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- after -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="tearDownClass" is-config="true" duration-ms="232" started-at="2019-06-02T21:24:24Z" finished-at="2019-06-02T21:24:24Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="tearDownClass" is-config="true" duration-ms="170" started-at="2019-06-02T22:46:53Z" finished-at="2019-06-02T22:46:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
+        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="after" is-config="true" duration-ms="0" started-at="2019-06-02T22:46:53Z" finished-at="2019-06-02T22:46:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- after -->
       </class> <!-- com.beachbody.automation.runners.DefaultRunner -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->

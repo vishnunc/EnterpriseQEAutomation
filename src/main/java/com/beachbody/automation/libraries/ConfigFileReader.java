@@ -225,6 +225,16 @@ public class ConfigFileReader {
 		else throw new RuntimeException("template is not specified in the Configuration.properties file.");		
 	}
 
+	public String getOIMUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getOIMPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
  

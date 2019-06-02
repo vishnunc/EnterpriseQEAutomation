@@ -45,21 +45,25 @@ public class TBB_ShippingPage {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_firstName")), 15);		
 			WebElement FirstName=world.driver.findElement(By.xpath(elementLib.getString("input_firstName")));
 			Assert.assertTrue(FirstName.isEnabled(), "firstname field is enabled");
+			FirstName.clear();
 			FirstName.sendKeys(fname);
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_lastName")), 15);		
 			WebElement LastName=world.driver.findElement(By.xpath(elementLib.getString("input_lastName")));
 			Assert.assertTrue(FirstName.isEnabled(), "Lastname field is enabled");
+			LastName.clear();
 			LastName.sendKeys(lname);		
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_phoneNumber")), 15);		
 			WebElement PhoneNumber=world.driver.findElement(By.xpath(elementLib.getString("input_phoneNumber")));
 			Assert.assertTrue(PhoneNumber.isEnabled(), "phone number field is enabled");
+			PhoneNumber.clear();
 			PhoneNumber.sendKeys(phone);		
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_address1")), 15);		
 			WebElement Addrs1=world.driver.findElement(By.xpath(elementLib.getString("input_address1")));
 			Assert.assertTrue(Addrs1.isEnabled(), "Address1 field enabled");
+			Addrs1.clear();
 			Addrs1.sendKeys(address);		
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("select_state")), 15);		
@@ -70,15 +74,25 @@ public class TBB_ShippingPage {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_zip")), 15);		
 			WebElement ZipCode=world.driver.findElement(By.xpath(elementLib.getString("input_zip")));
 			Assert.assertTrue(ZipCode.isEnabled(), "zip code filed enabled");
+			ZipCode.clear();
 			ZipCode.sendKeys(zip);		
 		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_city")), 15);	
 			WebElement City=world.driver.findElement(By.xpath(elementLib.getString("input_city")));
 			Assert.assertTrue(City.isEnabled(), "city filed enabled");
+			City.clear();
 			City.sendKeys(city);
 			
 			//Click to show the QAS pop up
 			ZipCode.click();
+			
+			world.setCustomerDetails("FirstName", fname);
+			world.setCustomerDetails("LastName", lname);
+			world.setCustomerDetails("Phone", phone);
+			world.setCustomerDetails("Address1", address);
+			world.setCustomerDetails("City", city);
+			world.setCustomerDetails("State", state);
+			world.setCustomerDetails("Zip", zip);
 		} catch (Exception e1) {
 			throw new RuntimeException("shipping address notmatched"+e1);
 		}
@@ -89,9 +103,10 @@ public class TBB_ShippingPage {
 	 */
 	public void validateQASAddress() {
 		try {
-			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_qasNo")), 10);		
+			if(!driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_qasNo")), 60)){
+				validateQASAddress();
+			}
 			WebElement QASNoButton=world.driver.findElement(By.xpath(elementLib.getString("button_qasNo")));
-			Assert.assertTrue(QASNoButton.isEnabled(), "Address suggestion NO button is enabled");
 			QASNoButton.click();
 		} catch (Exception e1) {
 			throw new RuntimeException("QAS address not matched"+e1);
@@ -137,6 +152,8 @@ public class TBB_ShippingPage {
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("Validate_ShippingTaxes")), 10);		
 			WebElement Taxes=world.driver.findElement(By.xpath(elementLib.getString("Validate_ShippingTaxes")));
 			Assert.assertTrue(Taxes.isDisplayed(), "taxes updated");
+			
+			
 		} catch (Exception e1) {
 			throw new RuntimeException("Shipping taxes not matched"+e1);
 		}

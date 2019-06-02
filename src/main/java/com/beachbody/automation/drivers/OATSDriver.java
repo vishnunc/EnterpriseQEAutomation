@@ -23,10 +23,15 @@ public class OATSDriver {
 		this.world=world;
 	}
 	
-	public boolean runScript(String scriptName,String properties) throws IOException{
+	public boolean runScript(String scriptName,String properties){
 		ProcessBuilder oatsProcess = new ProcessBuilder("C:/OracleOATS/openScript/runScript.bat",scriptName);
 		oatsProcess.directory(new File("OATS/Scripts"));
-		oatsProcess.start();
+		try {
+			oatsProcess.start();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		//Read the output and error stream here and return accordingly
 		return true;
 	}
