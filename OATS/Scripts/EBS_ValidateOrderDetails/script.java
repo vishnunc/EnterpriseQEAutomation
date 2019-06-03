@@ -54,7 +54,7 @@ public class script extends IteratingVUserScript {
 		OrderDetails.put("LastName", orderDetails.getProperty("LastName"));
 		OrderDetails.put("ItemSKU", "MBDPP21E");
 		OrderDetails.put("ItemDesc", "21 Day Fix Extreme Performance Pack");
-		
+		forms_Functions.OrderSearch(OrderDetails.get("OrderNum"));
 		forms_Functions.ValidateOrderDetails(OrderDetails);
 	}
 
