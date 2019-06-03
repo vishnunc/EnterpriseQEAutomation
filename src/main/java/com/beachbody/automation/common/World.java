@@ -7,6 +7,8 @@ import com.beachbody.automation.drivers.SauceLabsDriver;
 import com.beachbody.automation.drivers.SeleniumGridDriver;
 import com.beachbody.automation.drivers.WebDriverManager;
 
+import cucumber.api.Scenario;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +30,7 @@ public class World {
 	public WebDriver ieDriver;
 	Map<String,String> customerDetails=new HashMap<String,String>();
 	Map<String,String> orderDetails=new HashMap<String,String>();
+	public Scenario scenario;
 
 	public Map<String, String> getCustomerDetails() {
 		return customerDetails;

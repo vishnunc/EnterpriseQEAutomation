@@ -25,16 +25,19 @@ public class OATSDriver {
 		this.world=world;
 	}
 	
-	public boolean runScript(String scriptName,String properties){
+	public String runScript(String scriptName,String properties){
 		ProcessBuilder oatsProcess = new ProcessBuilder("C:/OracleATS/openScript/runScript.bat",scriptName+"/"+scriptName+".jwg");
 		oatsProcess.directory(new File("OATS/Scripts"));
+		StringBuilder builder = new StringBuilder();
 		try {
 			oatsProcess.redirectErrorStream(true);
 			Process p = oatsProcess.start();
 			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 			String line;
+			
 			while ((line = in.readLine()) != null) {
-			    System.out.println(line);
+				builder.append(line);
+				builder.append(System.getProperty("line.separator"));
 			}
 			
 			p.waitFor();
@@ -43,7 +46,7 @@ public class OATSDriver {
 			e.printStackTrace();
 		}
 		//Read the output and error stream here and return accordingly
-		return true;
+		return builder.toString();
 	}
 
 }

@@ -30,6 +30,7 @@ public class Hooks{
 		world.setLocale(Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("locale"));
 		world.setDriverType(Reporter.getCurrentTestResult().getTestContext().getCurrentXmlTest().getParameter("driverType"));
 		world.getDriver();
+		world.scenario = scenario;
 		 
 	}
 	

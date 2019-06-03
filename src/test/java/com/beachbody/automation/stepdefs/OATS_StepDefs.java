@@ -24,11 +24,13 @@ public class OATS_StepDefs {
     
 	@Then("I should be able to validate customer details in EBS")
 	public void i_should_be_able_to_validate_customer_details_in_EBS() {
-	    world.getOatsDriver().runScript("EBS_ValidateCustomerDetails", null);
+	    String output = world.getOatsDriver().runScript("EBS_ValidateCustomerDetails", null);
+	    world.scenario.write(output);
 	}
 
 	@Then("I should be able to validate order details in EBS")
 	public void i_should_be_able_to_validate_order_details_in_EBS() {
-		world.getOatsDriver().runScript("EBS_ValidateOrderDetails", null);
+		String output = world.getOatsDriver().runScript("EBS_ValidateOrderDetails", null);
+		world.scenario.write(output);
 	}
 }
