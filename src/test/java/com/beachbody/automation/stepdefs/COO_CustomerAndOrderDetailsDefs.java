@@ -1,5 +1,12 @@
 package com.beachbody.automation.stepdefs;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import org.testng.Assert;
 
 import com.beachbody.automation.common.World;
@@ -7,6 +14,7 @@ import com.beachbody.automation.libraries.ConfigFileReader;
 import com.beachbody.automation.pages.COO_LoginPage;
 import com.beachbody.automation.pages.COO_MyCustomersPage;
 import com.beachbody.automation.pages.COO_OrdersPage;
+import com.beachbody.automation.pages.OIM_Page;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -203,14 +211,54 @@ public class COO_CustomerAndOrderDetailsDefs {
 	}
 
 	@Then("Validate productName as {string} orderType as {string}")
-	public void validate_productName_as_orderType_as(String ProductName, String OrderType) {
-		
+	public void validate_productName_as_orderType_as(String ProductName, String OrderType) {		
 		String products = cooorderspage.products();
 		//validating product name
 		Assert.assertEquals(products, ProductName, "Productname not matched");
 		String ordertype = cooorderspage.orderType();
 		//validating order type
-		Assert.assertEquals(ordertype, OrderType, "OrderType not matched");
-		
+		Assert.assertEquals(ordertype, OrderType, "OrderType not matched");		
 	}
+	
+	@Given("I am logged in to COO")
+	public void i_am_logged_in_to_COO() throws MalformedURLException {
+		File file = new File("config");
+		URL[] urls = {file.toURI().toURL()};
+		ClassLoader loader = new URLClassLoader(urls);
+		ResourceBundle configLib=ResourceBundle.getBundle("config",Locale.getDefault(),loader);
+		world.driver.get(ConfigFileReader.getConfigFileReader().getCOOUrl());		
+		cooLogin=new COO_LoginPage(this.world);
+		cooLogin.login(configLib.getString("COO_Username"),configLib.getString("COO_Password"));
+	}
+
+	@When("I search for the customer with email in COO")
+	public void i_search_for_the_customer_with_email_in_COO() {
+		coomycustomerspage = new COO_MyCustomersPage(world);
+		//clicking on my customers button
+		coomycustomerspage.clickMyCustomers();
+		//entering email address
+		coomycustomerspage.enterEmailAddress(world.getCustomerDetails().get("Email"));
+		//clicking on search button
+		coomycustomerspage.clickSearch();
+	}
+
+	
+	@Then("I should be able to validate the customer details in COO")
+	public void i_should_be_able_to_validate_the_customer_details_in_COO() {
+		coomycustomerspage.validateCustomerDetails();
+	}
+
+	@When("I search for the order with order number in COO")
+	public void i_search_for_the_order_with_order_number_in_COO() {
+		//entering order number
+		cooorderspage.enterOrderNumber(world.getCustomerDetails().get("OrderNum"));
+		//clicking on search button
+		cooorderspage.clickSearch();
+	}
+
+	@When("I should be able to validate the order details in COO")
+	public void i_should_be_able_to_validate_the_order_details_in_COO() {
+		cooorderspage.validateOrderDetails();
+	}
+
 }

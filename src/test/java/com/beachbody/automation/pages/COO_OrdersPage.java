@@ -121,7 +121,7 @@ public class COO_OrdersPage  {
 	 */
 	public String FirstName() {
 		try {
-			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("textdata_FirstName")), 5);
+			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("c")), 5);
 			firstNameDescrp = world.driver.findElement(By.xpath(elementLib.getString("textdata_FirstName"))).getText();
 		} catch (Exception e1) {
 			throw new RuntimeException("FirstName not matched"+e1);
@@ -288,6 +288,70 @@ public class COO_OrdersPage  {
 		return orderType;
 	}
     
+	
+	public void validateOrderDetails() {
+		//Validate OrderDate
+		String OrderDate = world.driver.findElement(By.xpath(elementLib.getString("textdata_OrderDate"))).getText();
+		if(!world.getCustomerDetails().get("OrderDate").equalsIgnoreCase(OrderDate)){
+			throw new RuntimeException("OrderDate did not match");
+		}
+		//validate CustomerID name
+		String CustomerID = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerID"))).getText();
+		if(!world.getCustomerDetails().get("CustomerID").equalsIgnoreCase(CustomerID)){
+			throw new RuntimeException("CustomerID name did not match");
+		}
+		//validate first name
+		String FName = world.driver.findElement(By.xpath(elementLib.getString("FName"))).getText();
+		if(!world.getCustomerDetails().get("FName").equalsIgnoreCase(FName)){
+			throw new RuntimeException("FirstName name did not match");
+		}
+		//validate LastName
+		String LName = world.driver.findElement(By.xpath(elementLib.getString("textdata_LastName"))).getText();
+		if(!world.getCustomerDetails().get("LName").equalsIgnoreCase(LName)){
+			throw new RuntimeException("LastName did not match");
+		}
+		//validate orderNumber
+		String orderNumber = world.driver.findElement(By.xpath(elementLib.getString("textdata_Order"))).getText();
+		if(!world.getCustomerDetails().get("orderNumber").equalsIgnoreCase(orderNumber)){
+			throw new RuntimeException("orderNumber did not match");
+		}			
+		//validate HomeDirect
+		String HomeDirect = world.driver.findElement(By.xpath(elementLib.getString("textdata_HomeDirect"))).getText();
+		if(!world.getCustomerDetails().get("HomeDirect").equalsIgnoreCase(HomeDirect)){
+			throw new RuntimeException("HomeDirect name did not match");
+		}
+		//validate EmailID
+		String EmailID = world.driver.findElement(By.xpath(elementLib.getString("textdata_Email"))).getText();
+		if(!world.getCustomerDetails().get("EmailID").equalsIgnoreCase(EmailID)){
+			throw new RuntimeException("EmailID did not match");
+		}
+		//validate LastOrderDate
+		String Amount = world.driver.findElement(By.xpath(elementLib.getString("textdata_Amount"))).getText();
+		if(!world.getCustomerDetails().get("Amount").equalsIgnoreCase(Amount)){
+			throw new RuntimeException("Amount did not match");
+		}
+		//validate Phone
+		String Phone = world.driver.findElement(By.xpath(elementLib.getString("textdata_Phone"))).getText();
+		if(!world.getCustomerDetails().get("Phone").equalsIgnoreCase(Phone)){
+			throw new RuntimeException("Phone did not match");
+		}
+		//status as "<Status>" volume as "<Volume>" trackingNumber as "<TrackingNumber>"
+		//validate Status
+		String Status = world.driver.findElement(By.xpath(elementLib.getString("textdata_Email"))).getText();
+		if(!world.getCustomerDetails().get("Status").equalsIgnoreCase(Status)){
+			throw new RuntimeException("Status did not match");
+		}
+		//validate Volume
+		String Volume = world.driver.findElement(By.xpath(elementLib.getString("textdata_Volume"))).getText();
+		if(!world.getCustomerDetails().get("Volume").equalsIgnoreCase(Volume)){
+			throw new RuntimeException("Volume did not match");
+		}
+		//validate TrackingNumber
+		String TrackingNumber = world.driver.findElement(By.xpath(elementLib.getString("textdata_Tracking"))).getText();
+		if(!world.getCustomerDetails().get("Phone").equalsIgnoreCase(TrackingNumber)){
+			throw new RuntimeException("TrackingNumber did not match");
+		}
+	}
 }
 
 

@@ -31,6 +31,18 @@ public class COO_LoginPage {
 		}
 		return true;
 	}
+	
+	public boolean login(String username, String password) {
+		try {
+			driverUtils.verifyElementPresence(driverUtils, world.driver,elementLib.getString("input_Email") , 20);
+			world.driver.findElement(By.xpath(elementLib.getString("input_Email"))).sendKeys(username);	
+			world.driver.findElement(By.xpath(elementLib.getString("input_Password"))).sendKeys(password);
+			world.driver.findElement(By.xpath(elementLib.getString("button_Sign"))).click();
+		}catch (Exception e1) {
+			throw new RuntimeException("Login not successful "+e1);
+		}
+			return true;					
+	}
 
 	/*
 	 * Clicking on signin button

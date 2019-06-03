@@ -19,6 +19,7 @@ public class WebDriverManager {
 	}
 	
 	public WebDriver getIEDriver(){
+		io.github.bonigarcia.wdm.WebDriverManager.iedriver().arch32().setup();
 		return this.driver=new InternetExplorerDriver();
 	}
 	
@@ -43,7 +44,7 @@ public class WebDriverManager {
 			}
 			else if(world.getBrowser().equalsIgnoreCase("iexplore"))
 			{
-				io.github.bonigarcia.wdm.WebDriverManager.iedriver().setup();
+				io.github.bonigarcia.wdm.WebDriverManager.iedriver().arch32().setup();
 				this.driver=new InternetExplorerDriver();
 			}
 			else if(world.getBrowser().equalsIgnoreCase("edge"))

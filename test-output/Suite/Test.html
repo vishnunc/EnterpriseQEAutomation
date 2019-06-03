@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jun 03 08:10:29 IST 2019</td>
+<td>Started on:</td><td>Mon Jun 03 12:01:53 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>8 seconds (8114 ms)</td>
+<tr><td>Total time:</td><td>170 seconds (170941 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,18 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.beachbody.automation.runners.DefaultRunner.runScenario()'><b>runScenario</b><br>Test class: com.beachbody.automation.runners.DefaultRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registration with purchase - [Lead, Performance pack, Club]"</td>
-<td><div><pre>java.lang.NullPointerException
-	at com.beachbody.automation.stepdefs.BYDStepDefs.i_am_logged_in_to_ByDesign(BYDStepDefs.java:34)
-	at ✽.I am logged in to ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:32)
-</pre></div><a href='#' onClick='toggleBox("stack-trace161649841", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace161649841'><pre>java.lang.NullPointerException
-	at com.beachbody.automation.stepdefs.BYDStepDefs.i_am_logged_in_to_ByDesign(BYDStepDefs.java:34)
-	at ✽.I am logged in to ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:32)
+<td><div><pre>java.lang.RuntimeException: email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at com.beachbody.automation.pages.BYD_Page.enterEmail(BYD_Page.java:61)
+	at com.beachbody.automation.stepdefs.BYDStepDefs.i_search_for_customer_with_in_ByDesign(BYDStepDefs.java:44)
+	at ?.I search for customer with email in ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:33)
+</pre></div><a href='#' onClick='toggleBox("stack-trace871312602", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace871312602'><pre>java.lang.RuntimeException: email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+	at com.beachbody.automation.pages.BYD_Page.enterEmail(BYD_Page.java:61)
+	at com.beachbody.automation.stepdefs.BYDStepDefs.i_search_for_customer_with_in_ByDesign(BYDStepDefs.java:44)
+	at ?.I search for customer with email in ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:33)
 </pre></div></td>
-<td>7</td>
-<td>com.beachbody.automation.runners.DefaultRunner@7b9a4292</td></tr>
+<td>166</td>
+<td>com.beachbody.automation.runners.DefaultRunner@2b2948e2</td></tr>
 </table><p>
 </body>
 </html>

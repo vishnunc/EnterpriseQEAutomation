@@ -337,5 +337,54 @@ public class COO_MyCustomersPage {
 		}
 		return ele;
 	}
+	
+
+	public void validateCustomerDetails() {
+		//Validate JoinDate name
+		String JoinDate = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("JoinDate").equalsIgnoreCase(JoinDate)){
+			throw new RuntimeException("JoinDate did not match");
+		}
+		//validate first name
+		String fname = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("FirstName").equalsIgnoreCase(fname)){
+			throw new RuntimeException("first name did not match");
+		}
+		//validate last name
+		String lname = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("LastName").equalsIgnoreCase(lname)){
+			throw new RuntimeException("Last name did not match");
+		}
+		//validate CustomerID
+		String CustomerID = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("CustomerID").equalsIgnoreCase(CustomerID)){
+			throw new RuntimeException("CustomerID did not match");
+		}
+		//validate CustomerType
+		String CustomerType = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("CustomerType").equalsIgnoreCase(CustomerType)){
+			throw new RuntimeException("CustomerType did not match");
+		}			
+		//validate CustomerSource
+		String CustomerSource = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("CustomerSource").equalsIgnoreCase(CustomerSource)){
+			throw new RuntimeException("CustomerSource name did not match");
+		}
+		//validate PhoneNumber name
+		String PhoneNumber = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("PhoneNumber").equalsIgnoreCase(PhoneNumber)){
+			throw new RuntimeException("PhoneNumber did not match");
+		}
+		//validate LastOrderDate
+		String LastOrderDate = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("LastOrderDate").equalsIgnoreCase(LastOrderDate)){
+			throw new RuntimeException("LastOrderDate did not match");
+		}
+		//validate Email
+		String Email = world.driver.findElement(By.xpath(elementLib.getString("textdata_CustomerDetails"))).getText();
+		if(!world.getCustomerDetails().get("Email").equalsIgnoreCase(Email)){
+			throw new RuntimeException("Email did not match");
+		}
+	}
 
 }

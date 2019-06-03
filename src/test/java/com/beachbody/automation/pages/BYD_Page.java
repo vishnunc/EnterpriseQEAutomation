@@ -222,15 +222,101 @@ public class BYD_Page {
 
 	public boolean login(String username,String password) {
 		try {
-			driverUtils.verifyElementPresence(driverUtils, world.driver, elementLib.getString("textbox_Username"), 10);
+			driverUtils.verifyElementPresence(driverUtils, world.ieDriver, elementLib.getString("textbox_Username"), 120);
 			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Username"))).sendKeys(username);	
 			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Password"))).sendKeys(password);	
 			world.ieDriver.findElement(By.xpath(elementLib.getString("button_SignIn"))).click();
 			}catch (Exception e1) {
 				throw new RuntimeException("signin button not clicked"+e1);
 			}
-				return true;
+				return true;		
+	}
+	
+	
+	public void validateCustomerDetails() {
+		//Validate custno
+		String custno = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("custno").equalsIgnoreCase(custno)){
+			throw new RuntimeException("custno did not match");
+		}
+		//validate name
+		String name = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("name").equalsIgnoreCase(name)){
+			throw new RuntimeException("name did not match");
+		}
+		//validate appdate
+		String appdate = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("appdate").equalsIgnoreCase(appdate)){
+			throw new RuntimeException("appdate did not match");
+		}
+		//validate customertype
+		String customertype = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("customertype").equalsIgnoreCase(customertype)){
+			throw new RuntimeException("customertype did not match");
+		}
+		 //validate status
+		String status = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("custno").equalsIgnoreCase(status)){
+			throw new RuntimeException("status did not match");
+		}
+		//validate rep
+		String rep = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("rep").equalsIgnoreCase(rep)){
+			throw new RuntimeException("rep did not match");
+		}
+		//validate repname
+		String repname = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("repname").equalsIgnoreCase(repname)){
+			throw new RuntimeException("repname did not match");
+		}
+		//validate searchfeild 
+		String searchfeild = world.driver.findElement(By.xpath(elementLib.getString("table_ResultsRow"))).getText();
+		if(!world.getCustomerDetails().get("searchfeild").equalsIgnoreCase(searchfeild)){
+			throw new RuntimeException("searchfeild did not match");
+		}
+	}		
 		
+		public void verifyOrderDetails() {
+			//Validate custno
+			String custno = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("custno").equalsIgnoreCase(custno)){
+				throw new RuntimeException("custno did not match");
+			}
+			//validate name
+			String name = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("name").equalsIgnoreCase(name)){
+				throw new RuntimeException("name did not match");
+			}
+			//validate appdate
+			String appdate = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("appdate").equalsIgnoreCase(appdate)){
+				throw new RuntimeException("appdate did not match");
+			}
+			//validate customertype
+			String customertype = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("customertype").equalsIgnoreCase(customertype)){
+				throw new RuntimeException("customertype did not match");
+			}
+			 //validate status
+			String status = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("custno").equalsIgnoreCase(status)){
+				throw new RuntimeException("status did not match");
+			}
+			//validate rep
+			String rep = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("rep").equalsIgnoreCase(rep)){
+				throw new RuntimeException("rep did not match");
+			}
+			//validate repname
+			String repname = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("repname").equalsIgnoreCase(repname)){
+				throw new RuntimeException("repname did not match");
+			}
+			//validate searchfeild 
+			String searchfeild = world.driver.findElement(By.xpath(elementLib.getString("text_Customer_Info"))).getText();
+			if(!world.getCustomerDetails().get("searchfeild").equalsIgnoreCase(searchfeild)){
+				throw new RuntimeException("searchfeild did not match");			
+			}
 	}
 
 	

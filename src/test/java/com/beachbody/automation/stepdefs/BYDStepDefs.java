@@ -48,8 +48,7 @@ private World world;
 
 	@Then("I should be able to validate the customer details in ByDesign")
 	public void i_should_be_able_to_validate_the_customer_details_in_ByDesign() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	   byd.validateCustomerDetails();
 	}
 			
 	@Given("I am on ByDesign Home Page")
@@ -146,6 +145,11 @@ private World world;
 	    byd.verifyMiscOrderInfo(zerooutshakeologyitems);
 	    byd.verifyMiscOrderInfo(oracleordernum);
 	    byd.verifyMiscOrderInfo(ebsordertype);
+	}
+	
+	@Then("I should be able to validate the order details in ByDesign")
+	public void i_should_be_able_to_validate_the_order_details_in_ByDesign() {
+	    byd.verifyOrderDetails();
 	}
 	
 }

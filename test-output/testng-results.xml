@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="8114" started-at="2019-06-03T02:40:29Z" finished-at="2019-06-03T02:40:37Z">
+  <suite name="Suite" duration-ms="170941" started-at="2019-06-03T06:31:53Z" finished-at="2019-06-03T06:34:44Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
+        <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b2948e2]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="8114" started-at="2019-06-03T02:40:29Z" finished-at="2019-06-03T02:40:37Z">
+    <test name="Test" duration-ms="170941" started-at="2019-06-03T06:31:53Z" finished-at="2019-06-03T06:34:44Z">
       <class name="com.beachbody.automation.runners.DefaultRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="setUpClass" is-config="true" duration-ms="179" started-at="2019-06-03T02:40:29Z" finished-at="2019-06-03T02:40:29Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b2948e2]" name="setUpClass" is-config="true" duration-ms="1669" started-at="2019-06-03T06:31:53Z" finished-at="2019-06-03T06:31:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="before" is-config="true" duration-ms="0" started-at="2019-06-03T02:40:29Z" finished-at="2019-06-03T02:40:29Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b2948e2]" name="before" is-config="true" duration-ms="1" started-at="2019-06-03T06:31:55Z" finished-at="2019-06-03T06:31:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" duration-ms="7657" started-at="2019-06-03T02:40:29Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-03T02:40:37Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b2948e2]" name="runScenario" duration-ms="166140" started-at="2019-06-03T06:31:55Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-03T06:34:41Z">
           <params>
             <param index="0">
               <value>
@@ -31,22 +31,26 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.NullPointerException">
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-at com.beachbody.automation.stepdefs.BYDStepDefs.i_am_logged_in_to_ByDesign(BYDStepDefs.java:34)
-at ✽.I am logged in to ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:32)
+              <![CDATA[java.lang.RuntimeException: email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
+at com.beachbody.automation.pages.BYD_Page.enterEmail(BYD_Page.java:61)
+at com.beachbody.automation.stepdefs.BYDStepDefs.i_search_for_customer_with_in_ByDesign(BYDStepDefs.java:44)
+at ✽.I search for customer with email in ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:33)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="after" is-config="true" duration-ms="1" started-at="2019-06-03T02:40:37Z" finished-at="2019-06-03T02:40:37Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b2948e2]" name="after" is-config="true" duration-ms="0" started-at="2019-06-03T06:34:41Z" finished-at="2019-06-03T06:34:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="tearDownClass" is-config="true" duration-ms="162" started-at="2019-06-03T02:40:37Z" finished-at="2019-06-03T02:40:37Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b2948e2]" name="tearDownClass" is-config="true" duration-ms="2444" started-at="2019-06-03T06:34:41Z" finished-at="2019-06-03T06:34:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
