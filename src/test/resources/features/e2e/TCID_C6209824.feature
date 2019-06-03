@@ -29,22 +29,22 @@ Scenario Outline: New customer registration with purchase - [Lead, Performance p
 #	When I search for user with email in OIM
 #	Then I should be able to validate the customer details in OIM
 #	#Validate the Customer details in ByDesign
-#	Given I am logged in to ByDesign
-#	When I search for customer with email in ByDesign
-#	Then I should be able to validate the customer details in ByDesign
-#	#Validate the Order details in ByDesign
-#	And I should be able to validate the order details in ByDesign
+	Given I am logged in to ByDesign
+	When I search for customer with email in ByDesign
+	Then I should be able to validate the customer details in ByDesign
+	#Validate the Order details in ByDesign
+	And I should be able to validate the order details in ByDesign
 	#Validate the Customer details in EBS
-	And I should be able to validate customer details in EBS
-	#Validate the Order details in EBS
-	And I should be able to validate order details in EBS
-	#Validate the Customer details in COO
-	Given I am logged in to COO
-	When I search for the customer with email in COO
-	Then I should be able to validate the customer details in COO
-	#Validate the Order details in COO
-	When I search for the order with order number in COO
-	And I should be able to validate the order details in COO
+#	And I should be able to validate customer details in EBS
+#	#Validate the Order details in EBS
+#	And I should be able to validate order details in EBS
+#	#Validate the Customer details in COO
+#	Given I am logged in to COO
+#	When I search for the customer with email in COO
+#	Then I should be able to validate the customer details in COO
+#	#Validate the Order details in COO
+#	When I search for the order with order number in COO
+#	And I should be able to validate the order details in COO
 
 Examples: Test data for the E2E scenario
 |pack|packtype|flavor|packaging|recover|RPacking|qty|subtotal|estimatedtotal|email|fname|lname|phone|address|city|state|zip|shipping|password|dob|gender|coach|
