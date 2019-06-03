@@ -24,7 +24,7 @@ public class OATSDriver {
 	}
 	
 	public boolean runScript(String scriptName,String properties){
-		ProcessBuilder oatsProcess = new ProcessBuilder("C:/OracleOATS/openScript/runScript.bat",scriptName);
+		ProcessBuilder oatsProcess = new ProcessBuilder("C:/OracleOATS/openScript/runScript.bat",scriptName+"/"+scriptName+".jwg");
 		oatsProcess.directory(new File("OATS/Scripts"));
 		try {
 			oatsProcess.start();
