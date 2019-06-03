@@ -93,7 +93,7 @@ public class script extends IteratingVUserScript {
 		//web.window("/web:window[@index='0' or @title='Home']").waitForPage(null);
 		web.link("{{obj.LoginPage."+Menu+"}}")
 		.click();
-		think(1);
+		think(3);
 		web.link("{{obj.LoginPage."+SubMenu+"}}")
 			.click();
 		web.window("/web:window[@index='1' or @title='Oracle E-Business Suite R12']")
