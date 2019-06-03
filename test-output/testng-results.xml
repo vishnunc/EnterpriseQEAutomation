@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="245632" started-at="2019-06-03T07:44:41Z" finished-at="2019-06-03T07:48:47Z">
+  <suite name="Suite" duration-ms="230475" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:08:23Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
+        <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="245632" started-at="2019-06-03T07:44:41Z" finished-at="2019-06-03T07:48:47Z">
+    <test name="Test" duration-ms="230475" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:08:23Z">
       <class name="com.beachbody.automation.runners.DefaultRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="setUpClass" is-config="true" duration-ms="164" started-at="2019-06-03T07:44:41Z" finished-at="2019-06-03T07:44:41Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="setUpClass" is-config="true" duration-ms="170" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:04:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="before" is-config="true" duration-ms="0" started-at="2019-06-03T07:44:41Z" finished-at="2019-06-03T07:44:41Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="before" is-config="true" duration-ms="0" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:04:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="runScenario" duration-ms="245255" started-at="2019-06-03T07:44:41Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-03T07:48:47Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="runScenario" duration-ms="229936" started-at="2019-06-03T08:04:33Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-03T08:08:23Z">
           <params>
             <param index="0">
               <value>
@@ -31,14 +31,26 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.RuntimeException">
+            <message>
+              <![CDATA[Last name did not match]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.RuntimeException: Last name did not match
+at com.beachbody.automation.pages.OIM_Page.validateCustomerDetails(OIM_Page.java:331)
+at com.beachbody.automation.stepdefs.OIM_StepDefs.i_should_be_able_to_validate_the_customer_details_in_OIM(OIM_StepDefs.java:64)
+at ✽.I should be able to validate the customer details in OIM(file:src/test/resources/features/e2e/TCID_C6209824.feature:30)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.RuntimeException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="after" is-config="true" duration-ms="1" started-at="2019-06-03T07:48:47Z" finished-at="2019-06-03T07:48:47Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="after" is-config="true" duration-ms="1" started-at="2019-06-03T08:08:23Z" finished-at="2019-06-03T08:08:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@7b9a4292]" name="tearDownClass" is-config="true" duration-ms="113" started-at="2019-06-03T07:48:47Z" finished-at="2019-06-03T07:48:47Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="tearDownClass" is-config="true" duration-ms="274" started-at="2019-06-03T08:08:23Z" finished-at="2019-06-03T08:08:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
