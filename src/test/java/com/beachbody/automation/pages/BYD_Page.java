@@ -222,6 +222,9 @@ public class BYD_Page {
 
 	public boolean login(String username,String password) {
 		try {
+			if(driverUtils.waitforElementPresent(world.ieDriver, By.xpath(elementLib.getString("link_clickHere")), 10)){
+				world.ieDriver.findElement(By.xpath(elementLib.getString("link_clickHere"))).click();
+			}
 			driverUtils.verifyElementPresence(driverUtils, world.ieDriver, elementLib.getString("textbox_Username"), 120);
 			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Username"))).sendKeys(username);	
 			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Password"))).sendKeys(password);	
@@ -241,13 +244,13 @@ public class BYD_Page {
 		}
 		//validate FirstName
 		String FirstName = world.driver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
-		String[] fname=FirstName.split("");
+		String[] fname=FirstName.split(", ");
 		if(!world.getCustomerDetails().get("FirstName").equalsIgnoreCase(fname[0])){
 			throw new RuntimeException("FirstName did not match");
 		}
 		//validate LastName
 		String LastName = world.driver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
-		String[] lname=LastName.split("");
+		String[] lname=LastName.split(", ");
 		if(!world.getCustomerDetails().get("LastName").equalsIgnoreCase(lname[1])){
 			throw new RuntimeException("LastName did not match");
 		}

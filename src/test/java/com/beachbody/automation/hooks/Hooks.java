@@ -42,6 +42,7 @@ public class Hooks{
 	@AfterStep
 	public void afterStep() throws InterruptedException {
 		Thread.sleep(2000);
+		
 	}
 	@After
 	public void after(Scenario scenario){
@@ -56,8 +57,7 @@ public class Hooks{
 			  System.out.println("Closing browser"); 
 			  if(this.world.driver!= null){
 		  
-				  System.out.println("Into If Closing browser");
-		  
+				  world.driver.quit();
 		  
 				  //this.world.driver.quit(); System.out.println("Into If Closing browser");
 		  } }catch(Throwable e) { System.out.println("Unable to quit the driver");
