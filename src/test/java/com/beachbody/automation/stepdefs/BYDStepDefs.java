@@ -41,7 +41,8 @@ private World world;
 	@When("I search for customer with email in ByDesign")
 	public void i_search_for_customer_with_in_ByDesign() {
 		world.ieDriver.get(configLib.getString("BYD_SEARCH_URL"));	
-		byd.enterEmail(world.getCustomerDetails().get("username283@yopmail.com"));
+		byd.enterEmail("username283@yopmail.com");
+		//byd.enterEmail(world.getCustomerDetails().get("Email"));
 	    byd.clickOnSearch();
 	    byd.clickOnResultsTab();
 	}
