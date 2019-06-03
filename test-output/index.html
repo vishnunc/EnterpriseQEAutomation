@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content passed suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.beachbody.automation.runners.DefaultRunner" hash-for-method="runScenario(&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;, &quot;New customer registrati...)">runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,9 +117,9 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.beachbody.automation.runners.DefaultRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -129,21 +129,12 @@
                   </a> <!-- runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...) -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registration with purchase - [Lead, Performance pack, Club]")</span>
-                  <div class="stack-trace">java.util.MissingResourceException: Can&apos;t find bundle for base name com.beachbody.automation.elementlib.COO_LoginPage, locale en_US
-	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1564)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1387)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:773)
-	at com.beachbody.automation.pages.COO_LoginPage.&lt;init&gt;(COO_LoginPage.java:14)
-	at com.beachbody.automation.stepdefs.COO_CustomerAndOrderDetailsDefs.i_am_logged_in_to_COO(Unknown Source)
-	at ✽.I am logged in to COO(file:src/test/resources/features/e2e/TCID_C6209824.feature:42)
-
-</div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -211,12 +202,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.beachbody.automation.runners.DefaultRunner')
-data.setCell(0, 3, 60099);
+data.setCell(0, 3, 245255);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 4 minutes</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -249,21 +240,19 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">174 ms</span>
+                <span class="method-start">164 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...)</span>
-                <span class="method-start">251 ms</span>
+                <span class="method-start">242 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">60354 ms</span>
+                <span class="method-start">245503 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">60355 ms</span>
+                <span class="method-start">245504 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

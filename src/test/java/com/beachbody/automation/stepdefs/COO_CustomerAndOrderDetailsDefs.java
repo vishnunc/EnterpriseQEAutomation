@@ -250,8 +250,11 @@ public class COO_CustomerAndOrderDetailsDefs {
 
 	@When("I search for the order with order number in COO")
 	public void i_search_for_the_order_with_order_number_in_COO() {
+		cooorderspage = new COO_OrdersPage(world);
+		//Navigate to order search
+		cooorderspage.clickMyPersonalAndCustomerOrders();
 		//entering order number
-		cooorderspage.enterOrderNumber(world.getCustomerDetails().get("OrderNum"));
+		cooorderspage.enterOrderNumber(world.getCustomerDetails().get("Email"));
 		//clicking on search button
 		cooorderspage.clickSearch();
 	}
