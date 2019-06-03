@@ -77,56 +77,17 @@
 	<build>
 		<plugins>
 			<plugin>
-				
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>3.0.0-M3</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>integration-test</goal>
-						</goals>
-						<configuration>
-
-							<!-- UNCOMMENT - To add any exclusions if required -->
-							<!-- <excludes> <exclude>**/*IT*.java</exclude> </excludes> -->
-
-							<includes>
-
-								<!-- UNCOMMENT BELOW LINE - To execute feature files with a single 
-									runner -->
-								<!-- <include>**/Default.java</include> -->
-
-								<!-- UNCOMMENT BELOW LINE - To execute feature files with multiple 
-									runners -->
-								<include>**/*Runner.java</include>
-							</includes>
-
-							<!-- OPTIONAL UNCOMMENT BELOW 6 LINES - To set data provider thread count value.
-							Default is 10. For executing using parallel or forking -->
-							<!-- <properties>
-								<property>
-									<name>dataproviderthreadcount</name>
-									<value>12</value>
-								</property>
-							</properties> -->
-														
-							<!-- OPTIONAL UNCOMMENT BELOW 3 LINES - In case of multiple runners to further reduce times. 
-							For executing using parallel -->
-							<!-- <parallel>classes</parallel>
-							<threadCount>12</threadCount>
-							<perCoreThreadCount>true</perCoreThreadCount> -->
-
-							<!-- UNCOMMENT BELOW 3 LINES - To execute using forking 
-								option -->
-							<!-- <forkCount>2</forkCount>
-							<reuseForks>true</reuseForks>
-							<reportsDirectory>${project.build.directory}/failsafe-reports_${surefire.forkNumber}</reportsDirectory> -->
-
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>	
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.14.1</version>
+                <configuration>
+                    <!-- Suite testng xml file to consider for test execution -->
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+           
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>	
 			<plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
