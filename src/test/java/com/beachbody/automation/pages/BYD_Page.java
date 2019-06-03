@@ -225,7 +225,7 @@ public class BYD_Page {
 			if(driverUtils.waitforElementPresent(world.ieDriver, By.xpath(elementLib.getString("link_clickHere")), 10)){
 				world.ieDriver.findElement(By.xpath(elementLib.getString("link_clickHere"))).click();
 			}
-			driverUtils.verifyElementPresence(driverUtils, world.ieDriver, elementLib.getString("textbox_Username"), 120);
+			driverUtils.waitforElementPresent(world.ieDriver, By.xpath(elementLib.getString("textbox_Username")), 10);
 			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Username"))).sendKeys(username);	
 			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Password"))).sendKeys(password);	
 			world.ieDriver.findElement(By.xpath(elementLib.getString("button_SignIn"))).click();
