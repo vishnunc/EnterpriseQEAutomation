@@ -226,7 +226,7 @@ public class COO_CustomerAndOrderDetailsDefs {
 		URL[] urls = {file.toURI().toURL()};
 		ClassLoader loader = new URLClassLoader(urls);
 		ResourceBundle configLib=ResourceBundle.getBundle("config",Locale.getDefault(),loader);
-		world.driver.get(ConfigFileReader.getConfigFileReader().getCOOUrl());		
+		world.driver.get(configLib.getString("COO_QA3_URL"));		
 		cooLogin=new COO_LoginPage(this.world);
 		cooLogin.login(configLib.getString("COO_Username"),configLib.getString("COO_Password"));
 	}

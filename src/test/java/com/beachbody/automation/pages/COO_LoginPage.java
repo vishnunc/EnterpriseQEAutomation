@@ -11,7 +11,7 @@ public class COO_LoginPage {
 
 	private World world;
 	public WebDriverUtilities driverUtils = new WebDriverUtilities();
-	ResourceBundle elementLib = ResourceBundle.getBundle("com\\beachbody\\automation\\elementlib\\COO_LoginPage");
+	ResourceBundle elementLib = ResourceBundle.getBundle("com.beachbody.automation.elementlib.COO_LoginPage");
 
 	public COO_LoginPage(World world) {
 		this.world = world;

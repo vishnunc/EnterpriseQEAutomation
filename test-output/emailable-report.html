@@ -9,14 +9,17 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">170,941</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">60,550</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.beachbody.automation.runners.DefaultRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1559543515686</td><td rowspan="1">166140</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.beachbody.automation.runners.DefaultRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1559545731204</td><td rowspan="1">60099</td></tr></tbody>
 </table>
-<h2>Test</h2><h3 id="m0">com.beachbody.automation.runners.DefaultRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;</td><td>&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.RuntimeException: email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at com.beachbody.automation.pages.BYD_Page.enterEmail(BYD_Page.java:61)
-	at com.beachbody.automation.stepdefs.BYDStepDefs.i_search_for_customer_with_in_ByDesign(BYDStepDefs.java:44)
-	at ✽.I search for customer with email in ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:33)
+<h2>Test</h2><h3 id="m0">com.beachbody.automation.runners.DefaultRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;</td><td>&quot;New customer registration with purchase - [Lead, Performance pack, Club]&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.util.MissingResourceException: Can&apos;t find bundle for base name com.beachbody.automation.elementlib.COO_LoginPage, locale en_US
+	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1564)
+	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1387)
+	at java.util.ResourceBundle.getBundle(ResourceBundle.java:773)
+	at com.beachbody.automation.pages.COO_LoginPage.&lt;init&gt;(COO_LoginPage.java:14)
+	at com.beachbody.automation.stepdefs.COO_CustomerAndOrderDetailsDefs.i_am_logged_in_to_COO(Unknown Source)
+	at ✽.I am logged in to COO(file:src/test/resources/features/e2e/TCID_C6209824.feature:42)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

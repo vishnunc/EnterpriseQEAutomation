@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jun 03 12:01:53 IST 2019</td>
+<td>Started on:</td><td>Mon Jun 03 12:38:50 IST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>170 seconds (170941 ms)</td>
+<tr><td>Total time:</td><td>60 seconds (60550 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,18 +76,24 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.beachbody.automation.runners.DefaultRunner.runScenario()'><b>runScenario</b><br>Test class: com.beachbody.automation.runners.DefaultRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registration with purchase - [Lead, Performance pack, Club]"</td>
-<td><div><pre>java.lang.RuntimeException: email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at com.beachbody.automation.pages.BYD_Page.enterEmail(BYD_Page.java:61)
-	at com.beachbody.automation.stepdefs.BYDStepDefs.i_search_for_customer_with_in_ByDesign(BYDStepDefs.java:44)
-	at ?.I search for customer with email in ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:33)
-</pre></div><a href='#' onClick='toggleBox("stack-trace871312602", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace871312602'><pre>java.lang.RuntimeException: email not enteredjava.lang.IllegalArgumentException: Keys to send should be a not null CharSequence
-	at com.beachbody.automation.pages.BYD_Page.enterEmail(BYD_Page.java:61)
-	at com.beachbody.automation.stepdefs.BYDStepDefs.i_search_for_customer_with_in_ByDesign(BYDStepDefs.java:44)
-	at ?.I search for customer with email in ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:33)
+<td><div><pre>java.util.MissingResourceException: Can&apos;t find bundle for base name com.beachbody.automation.elementlib.COO_LoginPage, locale en_US
+	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1564)
+	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1387)
+	at java.util.ResourceBundle.getBundle(ResourceBundle.java:773)
+	at com.beachbody.automation.pages.COO_LoginPage.&lt;init&gt;(COO_LoginPage.java:14)
+	at com.beachbody.automation.stepdefs.COO_CustomerAndOrderDetailsDefs.i_am_logged_in_to_COO(Unknown Source)
+	at ✽.I am logged in to COO(file:src/test/resources/features/e2e/TCID_C6209824.feature:42)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1435362240", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1435362240'><pre>java.util.MissingResourceException: Can&apos;t find bundle for base name com.beachbody.automation.elementlib.COO_LoginPage, locale en_US
+	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1564)
+	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1387)
+	at java.util.ResourceBundle.getBundle(ResourceBundle.java:773)
+	at com.beachbody.automation.pages.COO_LoginPage.&lt;init&gt;(COO_LoginPage.java:14)
+	at com.beachbody.automation.stepdefs.COO_CustomerAndOrderDetailsDefs.i_am_logged_in_to_COO(Unknown Source)
+	at ✽.I am logged in to COO(file:src/test/resources/features/e2e/TCID_C6209824.feature:42)
 </pre></div></td>
-<td>166</td>
-<td>com.beachbody.automation.runners.DefaultRunner@2b2948e2</td></tr>
+<td>60</td>
+<td>com.beachbody.automation.runners.DefaultRunner@7b9a4292</td></tr>
 </table><p>
 </body>
 </html>

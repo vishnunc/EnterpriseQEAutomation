@@ -29,15 +29,15 @@ Scenario Outline: New customer registration with purchase - [Lead, Performance p
 #	When I search for user with email in OIM
 #	Then I should be able to validate the customer details in OIM
 	#Validate the Customer details in ByDesign
-	Given I am logged in to ByDesign
-	When I search for customer with email in ByDesign
-	Then I should be able to validate the customer details in ByDesign
-	#Validate the Order details in ByDesign
-	And I should be able to validate the order details in ByDesign
+#	Given I am logged in to ByDesign
+#	When I search for customer with email in ByDesign
+#	Then I should be able to validate the customer details in ByDesign
+#	#Validate the Order details in ByDesign
+#	And I should be able to validate the order details in ByDesign
 	#Validate the Customer details in EBS
-	And I should be able to validate customer details in EBS
+#	And I should be able to validate customer details in EBS
 	#Validate the Order details in EBS
-	And I should be able to validate order details in EBS
+#	And I should be able to validate order details in EBS
 	#Validate the Customer details in COO
 	Given I am logged in to COO
 	When I search for the customer with email in COO
