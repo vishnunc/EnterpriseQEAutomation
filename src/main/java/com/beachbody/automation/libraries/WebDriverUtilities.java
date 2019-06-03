@@ -112,10 +112,10 @@ public class WebDriverUtilities {
             return null;
         } 
 	}
-	public void randomEmail(WebDriver driver,WebElement element) {
+	public String randomEmail() {
 		Random randomGenerator = new Random();  
 		int randomInt = randomGenerator.nextInt(1000);  
-		element.sendKeys("username"+ randomInt +"@gmail.com"); 
+		return "username"+ randomInt +"@yopmail.com"; 
 	}
 	
 	public void verifyElementPresence(WebDriverUtilities util,WebDriver driver,String strXpath,int seconds) {

@@ -24,14 +24,14 @@ public class TBB_CheckOutPage {
 	/*
 	 * entering the email and clicking on begin checkout
 	 */
-	public boolean beginCheckout(String email){
+	public boolean beginCheckout(){
 		System.out.println("begin checkout");		
 		try{		
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("input_Email")), 20);
 			WebElement eleme=world.driver.findElement(By.xpath(elementLib.getString("input_Email")));
 			Assert.assertTrue(eleme.isEnabled(), "Email filed enabled");
-			driverUtils.randomEmail(driver, eleme);			
-				
+			//driverUtils.randomEmail(driver, eleme);			
+			eleme.sendKeys(driverUtils.randomEmail());
 			driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_BeginCheckout")), 20);
 			WebElement BeGinCheckOut=world.driver.findElement(By.xpath(elementLib.getString("button_BeginCheckout")));
 			Assert.assertTrue(BeGinCheckOut.isEnabled(), "BeginCheckout button enabled");

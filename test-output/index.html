@@ -129,40 +129,10 @@
                   </a> <!-- runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...) -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registration with purchase - [Lead, Performance pack, Club]")</span>
-                  <div class="stack-trace">java.util.MissingResourceException: Can&apos;t find bundle for base name config/config, locale en_US
-	at java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:1564)
-	at java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1387)
-	at java.util.ResourceBundle.getBundle(ResourceBundle.java:773)
-	at com.beachbody.automation.stepdefs.OIM_StepDefs.&lt;init&gt;(OIM_StepDefs.java:24)
-	at org.picocontainer.injectors.AbstractInjector.newInstance(AbstractInjector.java:145)
-	at org.picocontainer.injectors.ConstructorInjector$1.run(ConstructorInjector.java:342)
-	at org.picocontainer.injectors.AbstractInjector$ThreadLocalCyclicDependencyGuard.observe(AbstractInjector.java:270)
-	at org.picocontainer.injectors.ConstructorInjector.getComponentInstance(ConstructorInjector.java:364)
-	at org.picocontainer.injectors.AbstractInjectionFactory$LifecycleAdapter.getComponentInstance(AbstractInjectionFactory.java:56)
-	at org.picocontainer.behaviors.AbstractBehavior.getComponentInstance(AbstractBehavior.java:64)
-	at org.picocontainer.behaviors.Stored.getComponentInstance(Stored.java:91)
-	at org.picocontainer.DefaultPicoContainer.getInstance(DefaultPicoContainer.java:699)
-	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:647)
-	at org.picocontainer.DefaultPicoContainer.getComponent(DefaultPicoContainer.java:678)
-	at cucumber.runtime.java.picocontainer.PicoFactory.getInstance(PicoFactory.java:40)
-	at cucumber.runtime.java.JavaStepDefinition.execute(JavaStepDefinition.java:57)
-	at cucumber.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:50)
-	at cucumber.runner.TestStep.executeStep(TestStep.java:63)
-	at cucumber.runner.TestStep.run(TestStep.java:49)
-	at cucumber.runner.PickleStepTestStep.run(PickleStepTestStep.java:43)
-	at cucumber.runner.TestCase.run(TestCase.java:45)
-	at cucumber.runner.Runner.runPickle(Runner.java:40)
-	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:65)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
-	at com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests.runScenario(AbstractTestNGCucumberParallelTests.java:58)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-	at ✽.I am logged in to OIM(file:src/test/resources/features/e2e/TCID_C6209824.feature:28)
-... Removed 13 stack frames
+                  <div class="stack-trace">java.lang.NullPointerException
+	at com.beachbody.automation.stepdefs.BYDStepDefs.i_am_logged_in_to_ByDesign(BYDStepDefs.java:34)
+	at ✽.I am logged in to ByDesign(file:src/test/resources/features/e2e/TCID_C6209824.feature:32)
+
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
@@ -237,7 +207,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.beachbody.automation.runners.DefaultRunner')
-data.setCell(0, 3, 7593);
+data.setCell(0, 3, 7657);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -275,21 +245,21 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">220 ms</span>
+                <span class="method-start">179 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...)</span>
-                <span class="method-start">295 ms</span>
+                <span class="method-start">273 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">7893 ms</span>
+                <span class="method-start">7934 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">7893 ms</span>
+                <span class="method-start">7935 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

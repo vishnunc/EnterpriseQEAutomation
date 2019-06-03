@@ -45,21 +45,23 @@ public class OIM_StepDefs {
 		oim.login(configLib.getString("OIM_Username"),configLib.getString("OIM_Password"));
 	}
 
-	@When("I search for user with {string} in OIM")
-	public void i_search_for_user_with_in_OIM(String email) {
+	@When("I search for user with email in OIM")
+	public void i_search_for_user_with_in_OIM() {
 		oim.clickManage();
 		oim.clickUsers();
 		//selecting 
 		oim.selectSearchDropDown("4");
 		//entering email
-		oim.enterSearchText(email);		
+		oim.enterSearchText(world.getCustomerDetails().get("Email"));		
 		//clicking on search icon
 		oim.clickOnSearchIcon();
+		//Click on user link to go to details page
+		oim.clickOnUserLogin();
 	}
 
 	@Then("I should be able to validate the customer details in OIM")
 	public void i_should_be_able_to_validate_the_customer_details_in_OIM() {
-	   
+	   oim.validateCustomerDetails();
 	}
 	
 	

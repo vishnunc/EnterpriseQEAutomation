@@ -1,5 +1,12 @@
 package com.beachbody.automation.stepdefs;
 
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Locale;
+import java.util.ResourceBundle;
+
 import com.beachbody.automation.common.World;
 import com.beachbody.automation.libraries.ConfigFileReader;
 import com.beachbody.automation.pages.BYD_Page;
@@ -16,20 +23,48 @@ private World world;
 	}
 	
 	BYD_Page byd;
+	ResourceBundle configLib;
+	
+	@Given("I am logged in to ByDesign")
+	public void i_am_logged_in_to_ByDesign() throws MalformedURLException {
+		File file = new File("config");
+		URL[] urls = {file.toURI().toURL()};
+		ClassLoader loader = new URLClassLoader(urls);
+		configLib=ResourceBundle.getBundle("config",Locale.getDefault(),loader);
+		//Get IE Driver
+		world.getIEDriver();
+		world.ieDriver.get(configLib.getString("BYD_QA3_URL"));
+		byd=new BYD_Page(this.world);
+		byd.login(configLib.getString("BYD_Username"),configLib.getString("BYD_Password"));
+	}
+
+	@When("I search for customer with email in ByDesign")
+	public void i_search_for_customer_with_in_ByDesign() {
+		world.ieDriver.get(configLib.getString("BYD_SEARCH_URL"));	
+		byd.enterEmail(world.getCustomerDetails().get("Email"));
+	    byd.clickOnSearch();
+	    byd.clickOnResultsTab();
+	}
+
+	@Then("I should be able to validate the customer details in ByDesign")
+	public void i_should_be_able_to_validate_the_customer_details_in_ByDesign() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new cucumber.api.PendingException();
+	}
 			
 	@Given("I am on ByDesign Home Page")
 	public void i_am_on_ByDesign_Home_Page() {
 		//launching BYD in browser
 		world.ieDriver.get(ConfigFileReader.getConfigFileReader().getBYDUrl());
 		byd=new BYD_Page(this.world);	
+		
 	}
 
 	@When("I enter {string} , {string} to login BYDesign")
 	public void i_enter_to_login_BYDesign(String userName, String password) {
 		//enter credentials to signin
-		byd.enterUserName(userName);
-		byd.enterPassword(password);
-		byd.clickOnSignInButton();
+		
+		
 	}
 
 	@When("I click on customers option from search menu")

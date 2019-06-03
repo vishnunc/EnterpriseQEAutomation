@@ -319,5 +319,29 @@ public class OIM_Page {
 		
 	}
 
+	public void validateCustomerDetails() {
+		//Validate first name
+		String fname = world.driver.findElement(By.xpath(elementLib.getString("text_firstName"))).getText();
+		if(!world.getCustomerDetails().get("FirstName").equalsIgnoreCase(fname)){
+			throw new RuntimeException("First name did not match");
+		}
+		//validate last name
+		String lname = world.driver.findElement(By.xpath(elementLib.getString("text_lastName"))).getText();
+		if(!world.getCustomerDetails().get("LastName").equalsIgnoreCase(lname)){
+			throw new RuntimeException("Last name did not match");
+		}
+		//validate email
+		String email = world.driver.findElement(By.xpath(elementLib.getString("text_Email"))).getText();
+		if(!world.getCustomerDetails().get("Email").equalsIgnoreCase(email)){
+			throw new RuntimeException("Email did not match");
+		}
+		//validate phone number
+		String phone = world.driver.findElement(By.xpath(elementLib.getString("text_phoneNum"))).getText();
+		if(!world.getCustomerDetails().get("Phone").equalsIgnoreCase(phone)){
+			throw new RuntimeException("Phone number did not match");
+		}
+		
+	}
+
 
 }

@@ -109,11 +109,11 @@ public class TBB_HomePageStepDefs {
 	    tbbShoppingCartPage.clickCheckout();
 	}
 
-	@Then("I should be able to provide {string} to begin checkout")
-	public void i_should_be_able_to_provide_to_begin_checkout(String email) {
+	@Then("I should be able to provide email to begin checkout")
+	public void i_should_be_able_to_provide_to_begin_checkout() {
 		tbbCheckoutPage=new TBB_CheckOutPage(this.world);
 		//providing random email and clicking on begin checkout button
-	    tbbCheckoutPage.beginCheckout(email);
+	    tbbCheckoutPage.beginCheckout();
 	}
 
 	@When("I skip offers to continue shopping")

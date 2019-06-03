@@ -55,8 +55,8 @@ public class BYD_Page {
 	//Entering email
 	public boolean enterEmail(String email) {
 	   try{
-		   driverUtils.verifyElementPresence(driverUtils, world.driver, elementLib.getString("textbox_CustomerEmail"), 20);
-		   world.driver.findElement(By.xpath(elementLib.getString("textbox_CustomerEmail"))).sendKeys(email);
+		   driverUtils.verifyElementPresence(driverUtils, world.ieDriver, elementLib.getString("textbox_CustomerEmail"), 20);
+		   world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_CustomerEmail"))).sendKeys(email);
 	   }catch(Exception e1) {
 			   throw new RuntimeException("email not entered"+e1);
        }   
@@ -67,9 +67,9 @@ public class BYD_Page {
 	public boolean clickOnSearch() {	   
   	    boolean result = false;  		
 		try{
-		   driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("button_Search")), 20);  
+		   driverUtils.waitforElementPresent(world.ieDriver, By.xpath(elementLib.getString("button_Search")), 20);  
 		   result = true;	       	   
-		   world.driver.findElement(By.xpath(elementLib.getString("button_Search"))).click();
+		   world.ieDriver.findElement(By.xpath(elementLib.getString("button_Search"))).click();
 	       Assert.assertTrue(result,"Unable to find element button_Search in Bydesign Page");
 		}catch(Exception e1) {
 			throw new RuntimeException("search button not clicked"+e1);
@@ -80,8 +80,8 @@ public class BYD_Page {
 	//Clicking on results tab
 	public boolean clickOnResultsTab() {	   
 	      try{
-		   driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("link_ResultsTab")), 20);  
-   		   world.driver.findElement(By.xpath(elementLib.getString("link_ResultsTab"))).click();
+		   driverUtils.waitforElementPresent(world.ieDriver, By.xpath(elementLib.getString("link_ResultsTab")), 20);  
+   		   world.ieDriver.findElement(By.xpath(elementLib.getString("link_ResultsTab"))).click();
 	      }catch(Exception e1) {
 	    	  throw new RuntimeException("results tab not clicked"+e1);
 	       }
@@ -219,4 +219,19 @@ public class BYD_Page {
 	       }	      
 	      return ele;		
 	}
+
+	public boolean login(String username,String password) {
+		try {
+			driverUtils.verifyElementPresence(driverUtils, world.driver, elementLib.getString("textbox_Username"), 10);
+			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Username"))).sendKeys(username);	
+			world.ieDriver.findElement(By.xpath(elementLib.getString("textbox_Password"))).sendKeys(password);	
+			world.ieDriver.findElement(By.xpath(elementLib.getString("button_SignIn"))).click();
+			}catch (Exception e1) {
+				throw new RuntimeException("signin button not clicked"+e1);
+			}
+				return true;
+		
+	}
+
+	
 }
