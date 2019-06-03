@@ -61,9 +61,10 @@ public class TBB_HomePage {
 	public boolean ClosingHomePagePopUp() throws RuntimeException {            
         try{
         	boolean popupExists = driverUtils.waitforElementPresent(world.driver, By.xpath(elementLib.getString("popup_HomePage")), 30);
-        	WebElement popup=world.driver.findElement(By.xpath(elementLib.getString("popup_HomePage")));
+        	
             if(popupExists)
             {
+            	WebElement popup=world.driver.findElement(By.xpath(elementLib.getString("popup_HomePage")));
             	popup.click();
             }
 		}  catch(Exception el) {
