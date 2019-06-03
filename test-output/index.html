@@ -129,11 +129,30 @@
                   </a> <!-- runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...) -->
                   <span class="method-name">runScenario</span>
                   <span class="parameters">("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registration with purchase - [Lead, Performance pack, Club]")</span>
-                  <div class="stack-trace">java.lang.RuntimeException: Last name did not match
-	at com.beachbody.automation.pages.OIM_Page.validateCustomerDetails(OIM_Page.java:331)
-	at com.beachbody.automation.stepdefs.OIM_StepDefs.i_should_be_able_to_validate_the_customer_details_in_OIM(OIM_StepDefs.java:64)
-	at ✽.I should be able to validate the customer details in OIM(file:src/test/resources/features/e2e/TCID_C6209824.feature:30)
-
+                  <div class="stack-trace">cucumber.runtime.DuplicateStepDefinitionException: Duplicate step definitions in com.beachbody.automation.stepdefs.OATS_StepDefs.i_should_be_able_to_validate_customer_details_in_EBS() in file:/Users/vishnu/EnterpriseQEAutomation/target/test-classes/ and com.beachbody.automation.stepdefs.EBS_StepDefs.i_should_be_able_to_validate_customer_details_in_EBS() in file:/Users/vishnu/EnterpriseQEAutomation/target/test-classes/
+	at cucumber.runner.Glue.addStepDefinition(Glue.java:30)
+	at cucumber.runtime.java.JavaBackend.addStepDefinition(JavaBackend.java:142)
+	at cucumber.runtime.java.MethodScanner.scan(MethodScanner.java:64)
+	at cucumber.runtime.java.MethodScanner.scan(MethodScanner.java:41)
+	at cucumber.runtime.java.JavaBackend.loadGlue(JavaBackend.java:82)
+	at cucumber.runner.Runner.&lt;init&gt;(Runner.java:28)
+	at cucumber.runner.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:42)
+	at cucumber.runner.ThreadLocalRunnerSupplier.access$000(ThreadLocalRunnerSupplier.java:13)
+	at cucumber.runner.ThreadLocalRunnerSupplier$1.initialValue(ThreadLocalRunnerSupplier.java:22)
+	at cucumber.runner.ThreadLocalRunnerSupplier$1.initialValue(ThreadLocalRunnerSupplier.java:19)
+	at java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:180)
+	at java.lang.ThreadLocal.get(ThreadLocal.java:170)
+	at cucumber.runner.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:38)
+	at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:63)
+	at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
+	at com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests.runScenario(AbstractTestNGCucumberParallelTests.java:56)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+... Removed 9 stack frames
 </div> <!-- stack-trace -->
                   <em>
 (Runs Cucumber Scenarios)                  </em>
@@ -208,12 +227,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.beachbody.automation.runners.DefaultRunner')
-data.setCell(0, 3, 229936);
+data.setCell(0, 3, 391);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 minutes</span>
+              <span class="suite-total-time">Total running time: 391 ms</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -246,21 +265,21 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-class before">
                 <span class="method-name">before</span>
-                <span class="method-start">170 ms</span>
+                <span class="method-start">220 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("New customer registration with purchase - [Lead, Performance pack, Club]", "New customer registrati...)</span>
-                <span class="method-start">247 ms</span>
+                <span class="method-start">306 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">after</span>
-                <span class="method-start">230189 ms</span>
+                <span class="method-start">709 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">230190 ms</span>
+                <span class="method-start">709 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

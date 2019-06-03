@@ -2,23 +2,23 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="230475" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:08:23Z">
+  <suite name="Suite" duration-ms="797" started-at="2019-06-03T09:06:31Z" finished-at="2019-06-03T09:06:32Z">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberParallelTests.runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="runScenario" class="com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="Test" duration-ms="230475" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:08:23Z">
+    <test name="Test" duration-ms="797" started-at="2019-06-03T09:06:31Z" finished-at="2019-06-03T09:06:32Z">
       <class name="com.beachbody.automation.runners.DefaultRunner">
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="setUpClass" is-config="true" duration-ms="170" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:04:33Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="setUpClass" is-config="true" duration-ms="220" started-at="2019-06-03T09:06:32Z" finished-at="2019-06-03T09:06:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="before" is-config="true" duration-ms="0" started-at="2019-06-03T08:04:33Z" finished-at="2019-06-03T08:04:33Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="before" is-config="true" duration-ms="1" started-at="2019-06-03T09:06:32Z" finished-at="2019-06-03T09:06:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="runScenario" duration-ms="229936" started-at="2019-06-03T08:04:33Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-03T08:08:23Z">
+        <test-method status="FAIL" signature="runScenario(cucumber.api.testng.PickleEventWrapper, cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="runScenario" duration-ms="391" started-at="2019-06-03T09:06:32Z" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2019-06-03T09:06:32Z">
           <params>
             <param index="0">
               <value>
@@ -31,26 +31,54 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.RuntimeException">
+          <exception class="cucumber.runtime.DuplicateStepDefinitionException">
             <message>
-              <![CDATA[Last name did not match]]>
+              <![CDATA[Duplicate step definitions in com.beachbody.automation.stepdefs.OATS_StepDefs.i_should_be_able_to_validate_customer_details_in_EBS() in file:/Users/vishnu/EnterpriseQEAutomation/target/test-classes/ and com.beachbody.automation.stepdefs.EBS_StepDefs.i_should_be_able_to_validate_customer_details_in_EBS() in file:/Users/vishnu/EnterpriseQEAutomation/target/test-classes/]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: Last name did not match
-at com.beachbody.automation.pages.OIM_Page.validateCustomerDetails(OIM_Page.java:331)
-at com.beachbody.automation.stepdefs.OIM_StepDefs.i_should_be_able_to_validate_the_customer_details_in_OIM(OIM_StepDefs.java:64)
-at ✽.I should be able to validate the customer details in OIM(file:src/test/resources/features/e2e/TCID_C6209824.feature:30)
+              <![CDATA[cucumber.runtime.DuplicateStepDefinitionException: Duplicate step definitions in com.beachbody.automation.stepdefs.OATS_StepDefs.i_should_be_able_to_validate_customer_details_in_EBS() in file:/Users/vishnu/EnterpriseQEAutomation/target/test-classes/ and com.beachbody.automation.stepdefs.EBS_StepDefs.i_should_be_able_to_validate_customer_details_in_EBS() in file:/Users/vishnu/EnterpriseQEAutomation/target/test-classes/
+at cucumber.runner.Glue.addStepDefinition(Glue.java:30)
+at cucumber.runtime.java.JavaBackend.addStepDefinition(JavaBackend.java:142)
+at cucumber.runtime.java.MethodScanner.scan(MethodScanner.java:64)
+at cucumber.runtime.java.MethodScanner.scan(MethodScanner.java:41)
+at cucumber.runtime.java.JavaBackend.loadGlue(JavaBackend.java:82)
+at cucumber.runner.Runner.<init>(Runner.java:28)
+at cucumber.runner.ThreadLocalRunnerSupplier.createRunner(ThreadLocalRunnerSupplier.java:42)
+at cucumber.runner.ThreadLocalRunnerSupplier.access$000(ThreadLocalRunnerSupplier.java:13)
+at cucumber.runner.ThreadLocalRunnerSupplier$1.initialValue(ThreadLocalRunnerSupplier.java:22)
+at cucumber.runner.ThreadLocalRunnerSupplier$1.initialValue(ThreadLocalRunnerSupplier.java:19)
+at java.lang.ThreadLocal.setInitialValue(ThreadLocal.java:180)
+at java.lang.ThreadLocal.get(ThreadLocal.java:170)
+at cucumber.runner.ThreadLocalRunnerSupplier.get(ThreadLocalRunnerSupplier.java:38)
+at cucumber.api.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:63)
+at cucumber.api.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:22)
+at com.beachbody.automation.runners.AbstractTestNGCucumberParallelTests.runScenario(AbstractTestNGCucumberParallelTests.java:56)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:71)
+at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:14)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+at java.lang.Thread.run(Thread.java:745)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+          </exception> <!-- cucumber.runtime.DuplicateStepDefinitionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="after" is-config="true" duration-ms="1" started-at="2019-06-03T08:08:23Z" finished-at="2019-06-03T08:08:23Z">
+        <test-method status="PASS" signature="after()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="after" is-config="true" duration-ms="0" started-at="2019-06-03T09:06:32Z" finished-at="2019-06-03T09:06:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- after -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="tearDownClass" is-config="true" duration-ms="274" started-at="2019-06-03T08:08:23Z" finished-at="2019-06-03T08:08:23Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.beachbody.automation.runners.DefaultRunner@2b9627bc]" name="tearDownClass" is-config="true" duration-ms="73" started-at="2019-06-03T09:06:32Z" finished-at="2019-06-03T09:06:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
