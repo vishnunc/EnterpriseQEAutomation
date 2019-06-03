@@ -237,60 +237,58 @@ public class BYD_Page {
 	
 	
 	public void validateCustomerDetails() {
+		//Click on the row to open details page
+		world.ieDriver.findElement(By.xpath(elementLib.getString("link_selectRow"))).click();
 		//Validate Email
-		String Email = world.driver.findElement(By.xpath(elementLib.getString("text_Email"))).getText();
+		String Email = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Email"))).getText();
 		if(!world.getCustomerDetails().get("Email").equalsIgnoreCase(Email)){
 			throw new RuntimeException("Email did not match");
 		}
 		//validate FirstName
-		String FirstName = world.driver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
-		String[] fname=FirstName.split(", ");
+		String FirstName = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
+		String[] fname=FirstName.split("");
 		if(!world.getCustomerDetails().get("FirstName").equalsIgnoreCase(fname[0])){
 			throw new RuntimeException("FirstName did not match");
 		}
 		//validate LastName
-		String LastName = world.driver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
-		String[] lname=LastName.split(", ");
+		String LastName = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
+		String[] lname=LastName.split("");
 		if(!world.getCustomerDetails().get("LastName").equalsIgnoreCase(lname[1])){
 			throw new RuntimeException("LastName did not match");
 		}
 		//validate Phone
-		String Phone = world.driver.findElement(By.xpath(elementLib.getString("text_Phone"))).getText();
+		String Phone = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Phone"))).getText();
 		if(!world.getCustomerDetails().get("Phone").equalsIgnoreCase(Phone)){
 			throw new RuntimeException("Phone did not match");
 		}
-		 //validate Network
-		String Network = world.driver.findElement(By.xpath(elementLib.getString("text_Network"))).getText();
-		if(!world.getCustomerDetails().get("Network").equalsIgnoreCase(Network)){
-			throw new RuntimeException("Network did not match");
-		}
+		
 		
 	}		
 		
 	public void verifyOrderDetails() {
 		//Validate OrderNum
-		String OrderNum = world.driver.findElement(By.xpath(elementLib.getString("text_OrderNumber"))).getText();
+		String OrderNum = world.ieDriver.findElement(By.xpath(elementLib.getString("text_OrderNumber"))).getText();
 		if(!world.getCustomerDetails().get("OrderNum").equalsIgnoreCase(OrderNum)){
 			throw new RuntimeException("OrderNumber did not match");
 		}
 		//validate OrderDate
-		String OrderDate = world.driver.findElement(By.xpath(elementLib.getString("text_OrderDate"))).getText();
+		String OrderDate = world.ieDriver.findElement(By.xpath(elementLib.getString("text_OrderDate"))).getText();
 		if(!world.getCustomerDetails().get("OrderDate").equalsIgnoreCase(OrderDate)){
 			throw new RuntimeException("OrderDate did not match");
 		}
 		//validate CustomerRole
-		String CustomerRole = world.driver.findElement(By.xpath(elementLib.getString("text_Network"))).getText();
+		String CustomerRole = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Network"))).getText();
 		if(!world.getCustomerDetails().get("CustomerRole").equalsIgnoreCase(CustomerRole)){
 			throw new RuntimeException("CustomerRole did not match");
 		}
 		//validate FirstName
-		String FirstName = world.driver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
+		String FirstName = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
 		String[] fname=FirstName.split("");
 		if(!world.getCustomerDetails().get("FirstName").equalsIgnoreCase(fname[0])){
 			throw new RuntimeException("FirstName did not match");
 		}
 		 //validate LastName
-		String LastName = world.driver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
+		String LastName = world.ieDriver.findElement(By.xpath(elementLib.getString("text_Name"))).getText();
 		String[] lname=LastName.split("");
 		if(!world.getCustomerDetails().get("LastName").equalsIgnoreCase(lname[1])){
 			throw new RuntimeException("LastName did not match");
