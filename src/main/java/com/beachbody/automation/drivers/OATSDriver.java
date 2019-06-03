@@ -27,8 +27,9 @@ public class OATSDriver {
 		ProcessBuilder oatsProcess = new ProcessBuilder("C:/OracleATS/openScript/runScript.bat",scriptName+"/"+scriptName+".jwg");
 		oatsProcess.directory(new File("OATS/Scripts"));
 		try {
-			oatsProcess.start();
-		} catch (IOException e) {
+			Process p = oatsProcess.start();
+			p.waitFor();
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
